@@ -1,18 +1,18 @@
 <?php
-
+### CLASE TIPO DE USUARIO ###
 class Tipos extends Controllers
 {
 
     public function __construct()
     {
-        session_start();
+        session_start(); #Inicio sesion
         if (empty($_SESSION['login'])) {
             header('Location: ' . base_url() . '/login');
         }
         parent::__construct();
     }
 
-    ### CARGAR VISTA Y DATA ###
+    ### CONTROLADOR ###
     public function Tipos()
     {
         $data['page_title'] = "Jipsafety | Categoria";
@@ -28,12 +28,14 @@ class Tipos extends Controllers
         $data['descrption_modal1'] = "Los campos remarcados con";
         $data['descrption_modal2'] = "son necesarios.";
 
+        #Cargo la vista(tipos). La vista esta en View - Tipos
         $this->views->getView($this, "tipos", $data);
     }
 
-    ### CARGAR VISTA Y DATA ###
+    ### CONTROLADOR: MOSTRAR TODOS LOS TIPOS DE USUARIO ###
     public function getTipos()
     {
+        #Cargo el modelo(selectTipo) 
         $arrData = $this->model->selectTipo();
 
         for ($i = 0; $i < count($arrData); $i++) {
@@ -43,7 +45,7 @@ class Tipos extends Controllers
                 $arrData[$i]['activo'] = '<span class="badge rounded-pill bg-danger">Inactivo</span>';
             }
 
-            #Botones
+            #Botones de accion
             $arrData[$i]['options'] = '<div class="text-center">
 				<button type="button" class="btn btn-warning btn-sm btnEditTipo" onClick="fntEditTipo(' . $arrData[$i]['cod_tipo_usuario'] . ')" title="Editar"><i class="ri-edit-2-line"></i></button>
 				<button type="button" class="btn btn-danger btn-sm btnDelTipo" onClick="fntDelTipo(' . $arrData[$i]['cod_tipo_usuario'] . ')" title="Eliminar"><i class="ri-delete-bin-5-line"></i></button>
@@ -56,7 +58,7 @@ class Tipos extends Controllers
         exit();
     }
 
-    ### GUARDAR DATA ###
+    ### CONTROLADOR: GUARDAR NUEVO TIPO DE USUARIO ###
     public function setTipo()
     {
 
@@ -79,6 +81,7 @@ class Tipos extends Controllers
                 $option = 2;
             }
 
+            #Verificar
             if ($request_Tipo > 0) {
                 if ($option == 1) {
                     $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
@@ -97,7 +100,7 @@ class Tipos extends Controllers
         die();
     }
 
-    ### ELIMINAR TIPO DE USUARIO ###
+    ### CONTROLADOR: ELIMINAR TIPO DE USUARIO ###
     public function delTipoUsuario()
     {
 
@@ -118,10 +121,11 @@ class Tipos extends Controllers
         }
     }
 
-    ### EDITAR TIPO DE USUARIO ###    
+    ### CONTROLADOR: EDITAR TIPO DE USUARIO ###    
     public function getTipo(int $idrol)
     {
 
+        #id
         $intIdTipo = intval($idrol);
 
         if ($intIdTipo  > 0) {

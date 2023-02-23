@@ -1,18 +1,18 @@
 <?php
-
+### CLASE USUARIO ###
 class Usuarios extends Controllers
 {
 
     public function __construct()
     {
-        session_start();
+        session_start(); #Inicio sesion
         if (empty($_SESSION['login'])) {
             header('Location: ' . base_url() . '/login');
         }
         parent::__construct();
     }
 
-    ### CARGAR VISTA Y DATA ###
+    ### CONTROLADOR: CARGAR VISTA Y DATA ###
     public function Usuarios()
     {
         $data['page_title'] = "Jipsafety | Categoria";
@@ -30,20 +30,22 @@ class Usuarios extends Controllers
 
         $data['btn_title_principal'] = "Nuevo usuario.";
 
+         #Cargo la vista(usuario). 
         $this->views->getView($this, "usuarios", $data);
     }
 
-    ### OBTENER INFORMACION COMBOX TIPO USUARIO ###
+    ### CONTROLADOR: OBTENER INFORMACION COMBOX TIPO USUARIO ###
     function obtenerTipoUsuario()
     {
 
+        #Modelo comboxTipoUsuario
         $arrData = $this->model->comboxTipoUsuario();
 
         echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
         exit();
     }
 
-    ### CARGAR VISTA Y DATA ###
+    ### CONTROLADOR: MOSTRAR TODOS LOS USUARIO EN EL DATATABLE ###
     public function getUsuarios()
     {
         $arrData = $this->model->selectUsuario();
@@ -71,7 +73,7 @@ class Usuarios extends Controllers
         exit();
     }
 
-    ### GUARDAR DATA ###
+    ### CONTROLADOR: GUARDAR USUARIO ###
     public function setUsuarios()
     {
 
@@ -80,6 +82,7 @@ class Usuarios extends Controllers
 
         if ($_POST) {
 
+            #Verifico
             if (empty($_POST['nombre']) || empty($_POST['apellido']) || empty($_POST['correo']) || empty($_POST['lStatus']) || empty($_POST['Tusuario'])) {
                 $arrResponse = array("status" => false, "msg" => 'Datos incorrectos.'); #No se envian los datos correspondientes
 
@@ -149,7 +152,7 @@ class Usuarios extends Controllers
         die();
     }
 
-    ### ELIMINAR TIPO DE USUARIO ###
+    ### CONTROLADOR: ELIMINAR TIPO DE USUARIO ###
     public function delUsuario()
     {
         if ($_POST) {
@@ -169,7 +172,7 @@ class Usuarios extends Controllers
         }
     }
 
-    ### EDITAR TIPO DE USUARIO ###    
+    ### CONTROLADOR: EDITAR TIPO DE USUARIO ###    
     public function getUsuario(int $idUsuario)
     {
 

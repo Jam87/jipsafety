@@ -1,5 +1,5 @@
 <?php
-
+### CLASE: UsuariosModel ###
 class UsuariosModel extends Mysql
 {
     private $cod_usuario;
@@ -21,21 +21,19 @@ class UsuariosModel extends Mysql
     }
 
     /***** COMBOX:TIPO DE USUARIO *****/
+    #Mostrar info en el Combox
     public function comboxTipoUsuario()
     {
-
         $sql = "SELECT * FROM secure_user_type";
 
         $request = $this->select_all($sql);
         return $request;
     }
 
-    ### MOSTRAR TODOS LOS TIPOS DE USUARIOS ###
+    ### MODELO: MOSTRAR TODOS LOS TIPOS DE USUARIOS ###
     public function selectUsuario()
     {
-
-
-        $sql = "SELECT 
+       $sql = "SELECT 
                   u.cod_usuario,
                   CONCAT(u.nombre, ' ', u.apellido) nombre,
                   u.telefono,
@@ -51,7 +49,7 @@ class UsuariosModel extends Mysql
         return $request;
     }
 
-    ### GUARDAR UN NUEVO TIPO DE USUARIO ###
+    ### MODELO: GUARDAR UN NUEVO TIPO DE USUARIO ###
     public function insertUsuario(
         string $nombre,
         string $apellido,
@@ -93,10 +91,9 @@ class UsuariosModel extends Mysql
         return $requestInsert;
     }
 
-    ### ELIMINAR EL USUARIO ###
+    ### MODELO: ELIMINAR EL USUARIO ###
     public function delUsuario(int $intIdUsuario)
     {
-
         $this->cod_usuario = $intIdUsuario;
 
         $sql = "UPDATE secure_user SET activo = ? WHERE cod_usuario =  '{$this->cod_usuario}'";
@@ -112,10 +109,9 @@ class UsuariosModel extends Mysql
         return $request;
     }
 
-    ### EDITAR USUARIO ###
+    ### MODELO: EDITAR USUARIO ###
     public function editUsuario(int $idUsuario)
     {
-
         //Buscar Usuario
         $this->cod_usuario = $idUsuario;
         $sql = "SELECT * FROM secure_user WHERE cod_usuario = '{$this->cod_usuario}'";
@@ -123,7 +119,7 @@ class UsuariosModel extends Mysql
         return $request;
     }
 
-    ### ACTUALIZAR TIPO DE USUARIO ###
+    ### MODELO: ACTUALIZAR TIPO DE USUARIO ###
     public function updateUsuario(
         int $intIdUsuario,
         string $nombre,

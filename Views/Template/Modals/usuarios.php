@@ -1,3 +1,4 @@
+<!--MODAL DE USUARIO-->
 <div id="modalUsuarios" class="modal zoomIn" tabindex="-1" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0 overflow-hidden">
@@ -109,7 +110,6 @@
                                         <label for="nombre">Estado <span class="text-danger">*</span></label>
 
                                         <select class="form-select mb-3" id="lStatus" name="lStatus" required>
-                                            <option selected>-- Seleccione --</option>
                                             <option value="1">Activo</option>
                                             <option value="2">Inactivo</option>
                                         </select>

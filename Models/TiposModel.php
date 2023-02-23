@@ -1,5 +1,5 @@
 <?php
-
+ ### CLASE: TiposModel ###
 class TiposModel extends Mysql
 {
     private $cod_tipo_usuario;
@@ -7,36 +7,44 @@ class TiposModel extends Mysql
     private $descriptiontype;
     private $activo;
 
-
     public function __construct()
     {
         parent::__construct();
     }
 
-    ### MOSTRAR TODOS LOS TIPOS DE USUARIOS ###
+    ### MODELO: MOSTRAR TODOS LOS TIPOS DE USUARIOS ###
     public function selectTipo()
     {
+        #Sentencia
         $sql = "SELECT * FROM secure_user_type WHERE activo != 0";
+
+        #Mando a llamar la función(select_all)
         $request = $this->select_all($sql);
         return $request;
     }
 
-    ### GUARDAR UN NUEVO TIPO DE USUARIO ###
+    ### MODELO: GUARDAR UN NUEVO TIPO DE USUARIO ###
     public function insertTipo(string $name, string $description, int $status)
     {
-
         $return = "";
         $this->usertype = $name;
         $this->descriptiontype = $description;
         $this->activo = $status;
 
+        #Sentencia
         $sql = "SELECT * FROM secure_user_type WHERE usertype = '{$this->usertype}' ";
+
+        #Mando a llamar la función(select_all)
         $request = $this->select_all($sql);
 
         if (empty($request)) {
 
             $sql = "INSERT INTO secure_user_type(usertype, descriptiontype, activo) VALUE (?,?,?)";
+
+            #arrData: array de información
             $arrData = array($this->usertype, $this->descriptiontype, $this->activo);
+
+            #Envio a la funcion insert(sentencia y data)
             $requestInsert = $this->insert($sql, $arrData);
 
             return $requestInsert;
@@ -46,10 +54,11 @@ class TiposModel extends Mysql
         return $return;
     }
 
-    ### ELIMINAR TIPO DE USUARIO ###
+    ### MODELO: ELIMINAR TIPO DE USUARIO ###
     public function deleteTipo(int $intIdTipo)
     {
 
+        #id
         $this->cod_tipo_usuario = $intIdTipo;
 
         $sql = "UPDATE secure_user_type SET activo = ? WHERE cod_tipo_usuario =  '{$this->cod_tipo_usuario}'";
@@ -65,7 +74,7 @@ class TiposModel extends Mysql
         return $request;
     }
 
-    ### EDITAR TIPO DE USUARIO ###
+    ### MODELO: EDITAR TIPO DE USUARIO ###
     public function editTipo(int $idUsuario){
         
         //Buscar Tipo de Usuario
@@ -76,7 +85,7 @@ class TiposModel extends Mysql
     }
 
     
-    ### ACTUALIZAR TIPO DE USUARIO ###
+    ### MODELO: ACTUALIZAR TIPO DE USUARIO ###
     public function updateTipo(int $intIdTipo, string $name, string $description, int $status){
 
         $this->cod_tipo_usuario = $intIdTipo;

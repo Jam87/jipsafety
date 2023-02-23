@@ -1,9 +1,10 @@
 <?php 
-
+#Inicio sesion
 	class Dashboard extends Controllers{
 		public function __construct()
 		{
-			session_start();
+			session_start(); #Crear sesión
+			#Verificar si existe sesión
 			if(empty($_SESSION['login']))
 			{
 				header('Location: '.base_url().'/login');	
@@ -12,6 +13,7 @@
 			
 		}
 
+		### CONTROLADOR ###
 		public function dashboard()
 		{
 			$data['page_id'] = 2;

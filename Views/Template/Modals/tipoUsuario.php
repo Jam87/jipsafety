@@ -1,3 +1,4 @@
+<!--MODAL TIPO DE USUARIO-->
 <div id="modalTipo" class="modal zoomIn" tabindex="-1" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0 overflow-hidden">
@@ -24,7 +25,6 @@
                     <div class="mb-3">
                         <label for="exampleSelect1">Estado <span class="text-danger">*</span></label>
                         <select class="form-select mb-3" id="listStatus" name="listStatus" required>
-                        <option selected>-- Seleccione --</option>
                             <option value="1">Activo</option>
                             <option value="2">Inactivo</option>
                         </select>
