@@ -70,7 +70,6 @@ formUsuario.addEventListener("submit", function (e) {
   let nombre = document.querySelector("#nombre").value;
   let apellido = document.querySelector("#apellido").value;
   let correo = document.querySelector("#correo").value;
-  let password = document.querySelector("#password").value;
   let status = document.querySelector("#lStatus").value;
   let Tusuario = document.querySelector("#Tusuario").value;
 
@@ -78,7 +77,6 @@ formUsuario.addEventListener("submit", function (e) {
     nombre == "" ||
     apellido == "" ||
     correo == "" ||
-    password == "" ||
     status == "" ||
     Tusuario == ""
   ) {
@@ -260,7 +258,7 @@ function fntEditUsuario(idUsuario) {
         document.querySelector("#telefono").value = objData.data.telefono;
         document.querySelector("#correo").value = objData.data.correo;
         document.querySelector("#username").value = objData.data.username;
-        document.querySelector("#password").value = objData.data.password;
+        document.querySelector(".password").value = objData.data.password;
         document.querySelector("#txtDescripcion").value =
           objData.data.direccion;
         document.querySelector("#lStatus").value = objData.data.activo;

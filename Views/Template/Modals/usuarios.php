@@ -84,11 +84,17 @@
                                 <div class="col-sm-6">
                                     <div class="formulario__grupo" id="grupo__apellido">
                                         <label for="nombre">Password <span class="text-danger">*</span></label>
-
-                                        <div class="formulario__grupo-input">
-                                            <input type="password" class="form-border" name="password" id="password" placeholder="Ingrese su correo" required>
-                                        </div>
+                                        <div class="position-relative auth-pass-inputgroup mb-3">
+                                            <input type="password" class="form-control pe-5 password" name="password" placeholder="Ingrese su contraseña" id="password-input">   
+                                        </div>        
                                     </div><!-- Fin: password-->
+                                    <div id="password-contain" class="p-3 bg-light mb-2 rounded">
+                                            <h5 class="fs-13">La contraseña debe contener:</h5>
+                                            <p id="pass-length" class="invalid fs-12 mb-2">Mínimo <b>8 caracteres</b></p>
+                                            <p id="pass-lower" class="invalid fs-12 mb-2"><b>1</b> letra <b>minúscula</b> (a-z)</p>
+                                            <p id="pass-upper" class="invalid fs-12 mb-2"><b>1</b> letra <b>mayúscula</b> (A-Z)</p>
+                                            <p id="pass-number" class="invalid fs-12 mb-0"><b>1</b> <b>número</b> (0-9)</p>
+                                        </div>
                                 </div>
                             </div>
                         </div><!-- Fin: grupo3 -->

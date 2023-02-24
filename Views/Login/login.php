@@ -68,12 +68,8 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="password-input">Contraseña</label>
-                                            <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" class="form-control pe-5 password-input" id="userpassword" name="userpassword" onpaste="return false" placeholder="Ingrese su Contraseña" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-                                                <div class="invalid-feedback">
-                                                    Ingrese su Contraseña
-                                                </div>
+                                            <div class="position-relative auth-pass-inputgroup mb-3">
+                                                <input type="password" class="form-control pe-5" name="userpassword" placeholder="Ingrese su contraseña" id="password-input">   
                                             </div>
                                         </div>
                                         
