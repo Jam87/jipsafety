@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
       if(nombre == '' || listStatus == '')
       {
+        //Modal error Toast aviso parte superior
             Swal.fire({
               position: 'top-end',
               toast:'true',
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function(){
               icon: 'warning',
               confirmButtonText: 'Aceptar',
               showConfirmButton: false,
-              timer: 3000,
+              timer: 5000,
               timerProgressBar:true
             }); 
         
@@ -69,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function(){
                       $('#modalTipo').modal('hide');
                       $('#table-tipos').DataTable().ajax.reload();                  
                     
+                      //Modal exito Toast aviso parte superior
+
                       Swal.fire({
                         position: 'top-end',
                         toast:'true',
@@ -78,11 +81,13 @@ document.addEventListener('DOMContentLoaded', function(){
                         icon: 'success',
                         confirmButtonText: 'Aceptar',
                         showConfirmButton: false,
-                        timer: 3000,
+                        timer: 5000,
                         timerProgressBar:true
                   });
                     
                   }else{
+                    //Modal error Toast aviso parte superior
+                    
                       Swal.fire({
                         position: 'top-end',
                         toast:'true',
@@ -92,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         icon: 'warning',
                         confirmButtonText: 'Aceptar',
                         showConfirmButton: false,
-                        timer: 3000,
+                        timer: 5000,
                         timerProgressBar:true
                   });                    
                 }
@@ -141,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function(){
                       icon: 'success',
                       confirmButtonText: 'Aceptar',
                       showConfirmButton: false,
-                      timer: 3000,
+                      timer: 5000,
                       timerProgressBar:true
                   });
     
@@ -155,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     icon: 'warning',
                     confirmButtonText: 'Aceptar',
                     showConfirmButton: false,
-                    timer: 3000,
+                    timer: 5000,
                     timerProgressBar:true
               });                    
                 }
@@ -232,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 icon: 'warning',
                 confirmButtonText: 'Aceptar',
                 showConfirmButton: false,
-                timer: 3000,
+                timer: 5000,
                 timerProgressBar:true
               });       
            }

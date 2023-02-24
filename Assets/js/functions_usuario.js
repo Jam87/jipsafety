@@ -91,7 +91,7 @@ formUsuario.addEventListener("submit", function (e) {
       icon: "warning",
       confirmButtonText: "Aceptar",
       showConfirmButton: false,
-      timer: 3000,
+      timer: 5000,
       timerProgressBar: true,
     });
 
@@ -112,6 +112,7 @@ formUsuario.addEventListener("submit", function (e) {
         $("#modalUsuarios").modal("hide");
         $("#table-usuarios").DataTable().ajax.reload();
 
+        //Modal exito Toast aviso parte superior
         Swal.fire({
           position: "top-end",
           toast: "true",
@@ -121,10 +122,11 @@ formUsuario.addEventListener("submit", function (e) {
           icon: "success",
           confirmButtonText: "Aceptar",
           showConfirmButton: false,
-          timer: 3000,
+          timer: 5000,
           timerProgressBar: true,
         });
       } else {
+        //Modal error Toast aviso parte superior
         Swal.fire({
           position: "top-end",
           toast: "true",
@@ -134,7 +136,7 @@ formUsuario.addEventListener("submit", function (e) {
           icon: "warning",
           confirmButtonText: "Aceptar",
           showConfirmButton: false,
-          timer: 3000,
+          timer: 5000,
           timerProgressBar: true,
         });
       }
@@ -176,6 +178,7 @@ function fntDelUsuario(idusuario) {
           if (objData.status) {
             $("#table-usuarios").DataTable().ajax.reload();
 
+            //Modal exito Toast aviso parte superior
             Swal.fire({
               position: "top-end",
               toast: "true",
@@ -189,6 +192,8 @@ function fntDelUsuario(idusuario) {
               timerProgressBar: true,
             });
           } else {
+            //Modal error Toast aviso parte superior
+            
             Swal.fire({
               position: "top-end",
               toast: "true",

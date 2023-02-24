@@ -63,6 +63,10 @@ class Tipos extends Controllers
     {
 
         if ($_POST) {
+
+            /*dep($_POST);
+            exit();*/
+
             #Capturo los datos
             $intIdTipo = intval($_POST['idTipo']);
 
@@ -74,6 +78,10 @@ class Tipos extends Controllers
             if ($intIdTipo == 0) {
                 #Crear
                 $request_Tipo = $this->model->insertTipo($name, $description, $status);
+               
+               /* dep($request_Tipo);
+                  exit();*/
+
                 $option = 1;
             } else {
                 #Actualizar

@@ -37,6 +37,9 @@ class TiposModel extends Mysql
         #Mando a llamar la función(select_all)
         $request = $this->select_all($sql);
 
+        /*var_dump($request);
+          exit();*/
+
         if (empty($request)) {
 
             $sql = "INSERT INTO secure_user_type(usertype, descriptiontype, activo) VALUE (?,?,?)";

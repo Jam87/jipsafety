@@ -19,6 +19,7 @@ formLogin.addEventListener('submit', function(e){
                 window.location = base_url+'/dashboard';                      
                 
               }else{
+               //Modal exito Toast aviso parte superior
                Swal.fire({
                   position: 'top-end',
                   toast:'true',
@@ -28,13 +29,15 @@ formLogin.addEventListener('submit', function(e){
                   icon: 'warning',
                   confirmButtonText: 'Aceptar',
                   showConfirmButton: false,
-                  timer: 3000,
+                  timer: 5000,
                   timerProgressBar:true
                 });  
                 
                 document.querySelector('#userpassword').value = "";
              }
          } else {
+            //Modal error Toast aviso parte superior
+
             Swal.fire({
                position: 'top-end',
                toast:'true',
@@ -44,7 +47,7 @@ formLogin.addEventListener('submit', function(e){
                icon: 'warning',
                confirmButtonText: 'Aceptar',
                showConfirmButton: false,
-               timer: 3000,
+               timer: 5000,
                timerProgressBar:true
              }); 
          }  
