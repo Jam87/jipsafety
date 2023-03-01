@@ -383,15 +383,30 @@
 
         <li class="nav-item">
           <a class="nav-link menu-link" href="#sidebarLanding" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLanding">
-            <i class="ri-rocket-line"></i> <span data-key="t-landing">Configuración</span>
+            <i class="ri-booklet-line"></i> <span data-key="t-landing">Catálogos</span>
           </a>
           <div class="collapse menu-dropdown" id="sidebarLanding">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <a href="landing.html" class="nav-link" data-key="t-one-page"> One Page </a>
+                <a href="<?=base_url();?>/bancos" class="nav-link" data-key="t-one-page">Bancos</a>
               </li>
               <li class="nav-item">
-                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing"> NFT Landing <span class="badge badge-pill bg-danger" data-key="t-new">New</span></a>
+                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Colores</a>
+              </li>
+              <li class="nav-item">
+                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Forma de pago</a>
+              </li>
+              <li class="nav-item">
+                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Moneda</a>
+              </li>
+              <li class="nav-item">
+                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Pais</a>
+              </li>
+              <li class="nav-item">
+                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Presentación</a>
               </li>
             </ul>
           </div>
