@@ -403,7 +403,7 @@
                 <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Moneda</a>
               </li>
               <li class="nav-item">
-                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Pais</a>
+                <a href="<?=base_url();?>/pais" class="nav-link" data-key="t-nft-landing">Pais</a>
               </li>
               <li class="nav-item">
                 <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Presentación</a>

@@ -126,7 +126,6 @@
                                 <div class="col-sm-6">
                                     <div class="formulario__grupo" id="grupo__apellido">
                                         <label for="nombre">Tipo de usuario <span class="text-danger">*</span></label>
-
                                         <select class="form-select mb-3" id="Tusuario" name="Tusuario">
 
                                         </select>
