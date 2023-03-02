@@ -400,13 +400,13 @@
                 <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Forma de pago</a>
               </li>
               <li class="nav-item">
-                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Moneda</a>
+                <a href="<?=base_url();?>/moneda" class="nav-link" data-key="t-nft-landing">Moneda</a>
               </li>
               <li class="nav-item">
                 <a href="<?=base_url();?>/pais" class="nav-link" data-key="t-nft-landing">Pais</a>
               </li>
               <li class="nav-item">
-                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Presentación</a>
+                <a href="<?=base_url();?>/presentacion" class="nav-link" data-key="t-nft-landing">Presentación</a>
               </li>
             </ul>
           </div>
