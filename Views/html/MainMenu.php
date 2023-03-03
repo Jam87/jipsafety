@@ -391,7 +391,7 @@
                 <a href="<?=base_url();?>/bancos" class="nav-link" data-key="t-one-page">Bancos</a>
               </li>
               <li class="nav-item">
-                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Colores</a>
+                <a href="<?=base_url();?>/colores" class="nav-link" data-key="t-nft-landing">Colores</a>
               </li>
               <li class="nav-item">
                 <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Contacto</a>
