@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function(){
       document.querySelector('#formMoneda').reset();
       
       var request = request =  new XMLHttpRequest();
-      var ajaxUrl = base_url+'/Moneda/editMoneda/'+idmoneda;
+      var ajaxUrl = base_url+'/Moneda/EditMoneda/'+idmoneda;
 
       request.open("GET",ajaxUrl,true);
       request.send();

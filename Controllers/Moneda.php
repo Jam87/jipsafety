@@ -82,6 +82,7 @@ class Moneda extends Controllers
             $listLocal   = intval($_POST['listLocal']); 
             $status      = intval($_POST['listStatus']);
 
+            
             #Si no viene ningun ID - Estoy creando 1 nuevo
             if ($intIdMoneda == 0) {
                 

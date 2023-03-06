@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function(){
   formColor.addEventListener('submit', function(e){
      e.preventDefault();
 
-      let intIdColor  = document.querySelector('#formColor').value; //Lo obtengo a la hora que voy a Editar
+      let intIdColor  = document.querySelector('#idColor').value; //Lo obtengo a la hora que voy a Editar
+      console.log(intIdColor)
       let descripcion = document.querySelector('#txtName').value;
       let color = document.querySelector('#txtColor').value;
       let listStatus  = document.querySelector('#listStatus').value;
@@ -58,20 +59,20 @@ document.addEventListener('DOMContentLoaded', function(){
       }
      
       let request = new XMLHttpRequest();
-      let ajaxUrl = base_url + "/Presentacion/setPresentacion";
-      let formDta = new FormData(formPresentacion);
+      let ajaxUrl = base_url + "/Colores/setColores";
+      let formDta = new FormData(formColor);
       request.open("POST", ajaxUrl,true)
       request.send(formDta);
-      console.log(request);
- 
+
      request.onload = function (){
           if(request.status == 200){
                   let objData = JSON.parse(request.responseText); 
+                  console.log(objData);
 
                   if(objData.status)
                   {
-                      $('#modalPresentacion').modal('hide');
-                      $('#table-presentacion').DataTable().ajax.reload();                  
+                      $('#modalColor').modal('hide');
+                      $('#table-colores').DataTable().ajax.reload();                  
                     
                       //Modal exito Toast aviso parte superior
 
@@ -108,12 +109,12 @@ document.addEventListener('DOMContentLoaded', function(){
           }
     })
 
-    //*** ELIMINAR PRESENTACION ***//
-    function fntDelPres(idpres){
+    //*** ELIMINAR COLOR ***//
+    function fntDelColor(idcolor){
                 
       Swal.fire({
-        title: 'Eliminar descripción',
-        text: "¿Realmente quiere eliminar la descripción?",
+        title: 'Eliminar color',
+        text: "¿Realmente quiere eliminar el color?",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -122,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function(){
       }).then((result) => {
         if (result.isConfirmed) {
             let request =  new XMLHttpRequest();
-            let ajaxUrl = base_url+'/Presentacion/delPres';
-            let strData = "cod_presentacion="+idpres;
+            let ajaxUrl = base_url+'/Colores/delColor';
+            let strData = "cod_color="+idcolor;
           
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -138,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 //Va a mostrar el mensaje 
                 if(objData.status)                {
                   
-                    $('#table-presentacion').DataTable().ajax.reload();
+                    $('#table-colores').DataTable().ajax.reload();
       
                     Swal.fire({
                       position: 'top-end',
@@ -177,27 +178,28 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
 
-    //*** EDITAR PAIS ***//  
+    //*** EDITAR COLOR ***//  
     /**
      * 
      * 1.Cambio estilo del modal
      * 2.Traigo los datos
      * 3.Muestro los datos en el modal de acuerdo al ID
      */
-   function fntEditPres(idpres){
+   function fntEditColor(idcolor){
 
-      var idpres = idpres;
-   
+      var idcolor = idcolor;
+      
        //Cambio estilos al modal
       document.querySelector('.modal-header').classList.replace("bg-pattern", "bg-pattern-2");
-      document.querySelector('#titleModal').innerHTML = "Actualizar Pais";
+      document.querySelector('#titleModal').innerHTML = "Actualizar Color";
       document.querySelector('.modal-header').classList.replace("headerRegister", "headerEdit", "bg-pattern-2");
       document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
       document.querySelector('#btnText').innerHTML="Actualizar";
-      document.querySelector('#formPresentacion').reset();
+      document.querySelector('#formColor').reset();
       
       var request = request =  new XMLHttpRequest();
-      var ajaxUrl = base_url+'/Presentacion/getPres/'+idpres;
+      var ajaxUrl = base_url+'/Colores/EditColor/'+idcolor;
+      console.log(ajaxUrl);
       request.open("GET",ajaxUrl,true);
       request.send();
 
@@ -213,8 +215,9 @@ document.addEventListener('DOMContentLoaded', function(){
            if(objData.status){
 
             //Muestro los datos en modal edit
-            document.querySelector('#idPresentacion').value = objData.data.cod_presentacion;
+            document.querySelector('#idColor').value = objData.data.cod_color;
             document.querySelector('#txtName').value = objData.data.descripcion;
+            document.querySelector('#txtColor').value = objData.data.codigo_html;
             document.querySelector('#listStatus').value = objData.data.listStatus;
 
             //Estado
@@ -229,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function(){
                                 <option value="2">Inactivo</option>
                               `;
               document.querySelector("#listStatus").innerHTML = htmlSelect;
-              $('#modalPresentacion').modal('show');
+              $('#modalColor').modal('show');
 
            }else{
               Swal.fire({
@@ -259,9 +262,9 @@ document.addEventListener('DOMContentLoaded', function(){
   //*** MANDAR A LLAMAR AL MODAL: Agregar una nueva marca ***//
   function openModal(){    
     
-    document.querySelector('#idPresentacion').value = "";
+    document.querySelector('#idColor').value = "";
     document.querySelector('.modal-header').classList.replace("bg-pattern-2", "bg-pattern");
-    document.querySelector('#titleModal').innerHTML = "Nuevo Banco";
+    document.querySelector('#titleModal').innerHTML = "Nuevo color";
     document.querySelector('.modal-header').classList.replace("headerRegister", "bg-pattern-2", "headerEdit");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML="Guardar";

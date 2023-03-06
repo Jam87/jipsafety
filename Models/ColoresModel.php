@@ -25,16 +25,17 @@ class ColoresModel extends Mysql
         return $request;
     }
 
-    ### MODELO: GUARDAR NUEVA PRESENTACION ###
-    public function insertPres(string $descripcion, int $status)
+    ### MODELO: GUARDAR NUEVO COLOR ###
+    public function insertColor(string $descripcion, string $txtColor, int $status)
     {
         $return = "";
         $this->descripcion  = $descripcion;
-        $this->date_registro = date("YYYY-MM-DD HH:MI:SS");
+        $this->codigo_html  = $txtColor;
+        $this->date_registro = gmdate('Y-m-d H');
         $this->activo       = $status;
 
         #Sentencia
-        $sql = "SELECT * FROM cat_presentacion WHERE descripcion = '{$this->descripcion}' ";
+        $sql = "SELECT * FROM cat_colores WHERE descripcion = '{$this->descripcion}' ";
         
         #Mando a llamar la función(select_all)
         $request = $this->select_all($sql);        
@@ -44,10 +45,10 @@ class ColoresModel extends Mysql
 
         if (empty($request)) {
 
-            $sql = "INSERT INTO cat_presentacion(descripcion, date_registro, activo) VALUE (?,?,?)";
-
+            $sql = "INSERT INTO cat_colores(descripcion, codigo_html, date_registro, activo) VALUE (?,?,?,?)";
+        
             #arrData: array de información
-            $arrData = array($this->descripcion, $this->date_registro, $this->activo);
+            $arrData = array($this->descripcion, $this->codigo_html, $this->date_registro, $this->activo);
 
             #Envio a la funcion insert(sentencia y data)
             $requestInsert = $this->insert($sql, $arrData);
@@ -60,14 +61,14 @@ class ColoresModel extends Mysql
     }
 
 
-    ### MODELO: ELIMINAR PAIS ###
-    public function deletePres(int $intIdPres)
+    ### MODELO: ELIMINAR COLOR ###
+    public function deleteColor(int $intIdColor)
     {
 
         #id
-        $this->cod_presentacion  = $intIdPres;
+        $this->cod_color  = $intIdColor;
 
-        $sql = "UPDATE cat_presentacion SET activo = ? WHERE cod_presentacion =  '{$this->cod_presentacion}'";
+        $sql = "UPDATE cat_colores SET activo = ? WHERE cod_color =  '{$this->cod_color}'";
 
         $arrData = array(0);
         $request = $this->update($sql, $arrData);
@@ -81,34 +82,37 @@ class ColoresModel extends Mysql
     }
  
 
-    ### MODELO: EDITAR PRESENTACION ###
-    public function editPress(int $idPres){
+    ### MODELO: EDITAR COLOR ###
+    public function editColor(int $idColor){
         
-        //Buscar Pais
-        $this->cod_presentacion = $idPres;
-        $sql = "SELECT * FROM cat_presentacion WHERE cod_presentacion = '{$this->cod_presentacion}'";
+        //Buscar Color
+        $this->cod_color = $idColor;
+        $sql = "SELECT * FROM cat_colores WHERE cod_color = {$this->cod_color}";
         $request = $this->select($sql);
         return $request;
     }
 
    
-    ### MODELO: ACTUALIZAR PRESENTACION ###
-    public function updatePres(int $intIdPres, string $descripcion, int $status){
+    ### MODELO: ACTUALIZAR COLOR ###
+    public function updateColor(int $intIdColor, string $descripcion, string $txtColor, int $status){
 
         #Recojo Data
-        $this->cod_presentacion  = $intIdPres;
+        $this->	cod_color        = $intIdColor;
         $this->descripcion       = $descripcion;
+        $this->codigo_html       = $txtColor;
         $this->date_registro     = date("F j, Y, g:i a");
         $this->activo            = $status;
 
 
-        $sql = "SELECT * FROM cat_presentacion WHERE descripcion = '$this->descripcion' AND cod_presentacion != $this->cod_presentacion";
+        $sql = "SELECT * FROM cat_colores WHERE descripcion = '$this->descripcion' AND cod_color != $this->cod_color";
         $request = $this->select_all($sql);
 
         if(empty($request))
         {
-            $sql = "UPDATE cat_presentacion SET descripcion = ?, date_registro = ?, activo = ? WHERE cod_presentacion = $this->cod_presentacion";
-            $arrData = array($this->descripcion, $this->date_registro, $this->activo);
+            $sql = "UPDATE cat_colores SET descripcion = ?, codigo_html = ?, date_registro = ?, activo = ? WHERE cod_color  = $this->cod_color";
+
+            $arrData = array($this->descripcion, $this->codigo_html, $this->codigo_html, $this->date_registro, $this->activo);
+            
             $request = $this->update($sql,$arrData);
         }else{
             $request = "exist";

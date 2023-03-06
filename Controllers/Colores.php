@@ -60,44 +60,45 @@ class Colores extends Controllers
         exit();
     }
 
-    ### CONTROLADOR: GUARDAR NUEVA PRESENTACION ###
-    public function setPresentacion()
+    ### CONTROLADOR: GUARDAR NUEVO COLOR ###
+    public function setColores()
     {
-
         if ($_POST) {
 
             /*dep($_POST);
             exit();*/
 
             #Capturo los datos
-            $intIdPres   = intval($_POST['idPresentacion']);
-            $descripcion = strClean($_POST['txtName']);
-            $status      = intval($_POST['listStatus']);
+            $intIdColor   = intval($_POST['idColor']);
+            $descripcion  = strClean($_POST['txtName']);
+            $txtColor     = strClean($_POST['txtColor']);
+            $status       = intval($_POST['listStatus']);
 
+          
             #Si no viene ningun ID - Estoy creando 1 nuevo
-            if ($intIdPres == 0) {
+            if ($intIdColor == 0) {
                 
                 #Crear
-                $request_Pres = $this->model-> insertPres($descripcion, $status);
+                $request_Color = $this->model-> insertColor($descripcion, $txtColor, $status);
                
                /* dep($request_Tipo);
                   exit();*/
 
                 $option = 1;
             } else {
-                #Actualizar
-                $request_Pres = $this->model->updatePres($intIdPres, $descripcion, $status);
+                #Actualizar              
+                $request_Color = $this->model->updateColor($intIdColor, $descripcion, $txtColor, $status);
                 $option = 2;
             }
 
             #Verificar
-            if ( $request_Pres > 0) {
+            if ( $request_Color > 0) {
                 if ($option == 1) {
                     $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
                 } else {
                     $arrResponse = array('status' => true, 'msg' => 'Datos actualizados correctamente.');
                 }
-            } else if ($request_Pres === 'existe') {
+            } else if ($request_Color === 'existe') {
                 $arrResponse = array('status' => false, 'msg' => '¡Atención! La presentación ya existe.');
             } else {
                 $arrResponse = array('status' => true, 'msg' => 'No es posible almacenar los datos');
@@ -109,14 +110,14 @@ class Colores extends Controllers
         die();
     }
 
-    ### CONTROLADOR: ELIMINAR PRESENTACIÓN ###
-    public function delPres()
+    ### CONTROLADOR: ELIMINAR Color###
+    public function delColor()
     {
         if ($_POST) {
 
-            $intIdPres = intval($_POST['cod_presentacion']);
+            $intIdColor = intval($_POST['cod_color']);
 
-            $requestDelete = $this->model->deletePres($intIdPres);
+            $requestDelete = $this->model->deleteColor($intIdColor);
 
             if ($requestDelete) {
                 $arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la descripción');
@@ -129,14 +130,14 @@ class Colores extends Controllers
         }
     }
 
-    ### CONTROLADOR: EDITAR PRESENTACION ###    
-    public function getPres(int $idPres)
+    ### CONTROLADOR: EDITAR COLOR ###    
+    public function EditColor(int $idColor)
     {
         #id
-        $intIdPres = intval($idPres);
+        $intIdColor = intval($idColor);
 
-        if ($intIdPres  > 0) {
-            $arrData = $this->model->editPress($intIdPres);
+        if ($intIdColor  > 0) {
+            $arrData = $this->model->editColor($intIdColor);
 
             if (empty($arrData)) {
                 $arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
