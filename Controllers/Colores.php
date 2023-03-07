@@ -73,7 +73,6 @@ class Colores extends Controllers
             $descripcion  = strClean($_POST['txtName']);
             $txtColor     = strClean($_POST['txtColor']);
             $status       = intval($_POST['listStatus']);
-
           
             #Si no viene ningun ID - Estoy creando 1 nuevo
             if ($intIdColor == 0) {

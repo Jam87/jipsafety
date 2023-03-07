@@ -97,22 +97,22 @@ class ColoresModel extends Mysql
     public function updateColor(int $intIdColor, string $descripcion, string $txtColor, int $status){
 
         #Recojo Data
-        $this->	cod_color        = $intIdColor;
+        $this->cod_color         = $intIdColor;
         $this->descripcion       = $descripcion;
         $this->codigo_html       = $txtColor;
-        $this->date_registro     = date("F j, Y, g:i a");
+        $this->date_registro     = gmdate('Y-m-d H');
         $this->activo            = $status;
 
 
-        $sql = "SELECT * FROM cat_colores WHERE descripcion = '$this->descripcion' AND cod_color != $this->cod_color";
+        $sql = "SELECT * FROM cat_colores WHERE descripcion = '{$this->descripcion}' AND cod_color != $this->cod_color";
         $request = $this->select_all($sql);
 
         if(empty($request))
         {
-            $sql = "UPDATE cat_colores SET descripcion = ?, codigo_html = ?, date_registro = ?, activo = ? WHERE cod_color  = $this->cod_color";
+            $sql = "UPDATE cat_colores SET descripcion = ?, codigo_html = ?, date_registro = ?, activo = ? WHERE cod_color = $this->cod_color";
 
-            $arrData = array($this->descripcion, $this->codigo_html, $this->codigo_html, $this->date_registro, $this->activo);
-            
+            $arrData = array($this->descripcion, $this->codigo_html, $this->date_registro, $this->activo);
+
             $request = $this->update($sql,$arrData);
         }else{
             $request = "exist";

@@ -13,7 +13,7 @@
             <div class="modal-body">
                 <form method="post" id="formColor" name="formColor">
 
-                    <input type="text" id="idColor" name="idColor" value="">
+                    <input type="hidden" id="idColor" name="idColor" value="">
                     <div class="mb-3">
                         <label for="Nombre" class="form-label">Descripción <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="txtName" name="txtName" placeholder="Escriba la descripción" required>
