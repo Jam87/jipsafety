@@ -1,11 +1,11 @@
 <?php
- ### CLASE: BancosModel ###
-class BancosModel extends Mysql
+ ### CLASE: PagoModel ###
+class PagoModel extends Mysql
 {
-    private $cod_bancos;
-    private $nombre_banco;
-    private $nota_banco;
-    private $es_local;
+    private $cod_forma_pago;
+    private $descripcion;
+    private $nota_forma_pago;
+    private $es_aplicado_ventas;
     private $date_registro;
     private $activo;
 
@@ -14,11 +14,11 @@ class BancosModel extends Mysql
         parent::__construct();
     }
 
-    ### MODELO: MOSTRAR TODOS LOS TIPOS DE USUARIOS ###
-    public function selectBancos()
+    ### MODELO: MOSTRAR TODOS LAS LAS FORMAS DE PAGO ###
+    public function getFormaPago()
     {
         #Sentencia
-        $sql = "SELECT * FROM  cat_bancos WHERE activo != 0";
+        $sql = "SELECT * FROM  cat_forma_pago WHERE activo != 0";
 
         #Mando a llamar la función(select_all)
         $request = $this->select_all($sql);

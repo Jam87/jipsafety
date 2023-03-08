@@ -397,7 +397,7 @@
                 <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Contacto</a>
               </li>
               <li class="nav-item">
-                <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing">Forma de pago</a>
+                <a href="<?=base_url();?>/formaPago" class="nav-link" data-key="t-nft-landing">Forma de pago</a>
               </li>
               <li class="nav-item">
                 <a href="<?=base_url();?>/moneda" class="nav-link" data-key="t-nft-landing">Moneda</a>

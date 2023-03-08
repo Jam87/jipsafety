@@ -15,9 +15,11 @@
 		{
 			//Ejemplo:HomeModel.php			
 			$model = get_class($this)."Model";
+			//echo $model . "<br>";
 			
 			#Hace referencia donde esta el modelo
 			$routClass = "Models/".$model.".php";
+			//echo $routClass;
 			
 			#Verifico si existe
 			if(file_exists($routClass)){
