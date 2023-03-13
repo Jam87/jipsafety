@@ -1,7 +1,2 @@
-#Ignorar 
+Controllers/Moneda.php
 
-Controllers/Contacto.php
-Models/ContactoModel.php
-Views/Contacto/
-Views/Template/Modals/contacto.php
-Assets/js/functions_contacto.js
