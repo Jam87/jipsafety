@@ -11,14 +11,14 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="public/images/favicon.ico">
 
- 
+
     <!-- Bootstrap Css -->
     <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
     <link href="public/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="public/css/app.min.css" rel="stylesheet" type="text/css" />
-   
+
 
 </head>
 
@@ -38,7 +38,7 @@
                         <div class="text-center mt-sm-5 mb-4 text-white-50">
                             <div>
                                 <a href="index.html" class="d-inline-block auth-logo">
-                                    <img src="public/images/logo-light-.svg" alt="" height="70">
+                                    <img src="public/images/logo-login.svg" alt="" height="70">
                                 </a>
                             </div>
                             <!--<p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>-->
@@ -57,7 +57,7 @@
                                     <p class="text-muted">Acceder a Jipsafety</p>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form class="needs-validation" name="formLogin" id="formLogin" novalidate >
+                                    <form class="needs-validation" name="formLogin" id="formLogin" novalidate>
 
                                         <div class="mb-3">
                                             <label for="useremail" class="form-label">Correo Electronico <span class="text-danger">*</span></label>
@@ -69,10 +69,10 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="password-input">Contraseña</label>
                                             <div class="position-relative auth-pass-inputgroup mb-3">
-                                                <input type="password" class="form-control pe-5" name="userpassword" placeholder="Ingrese su contraseña" id="password-input">   
+                                                <input type="password" class="form-control pe-5" name="userpassword" placeholder="Ingrese su contraseña" id="password-input">
                                             </div>
                                         </div>
-                                        
+
 
                                         <div id="password-contain" class="p-3 bg-light mb-2 rounded">
                                             <h5 class="fs-13">La contraseña debe contener:</h5>
