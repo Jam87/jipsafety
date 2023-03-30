@@ -1,10 +1,11 @@
 <?php
-  #Mando a llamar al modal
-  getModal('colores', $data);
+#Mando a llamar al modal
+getModal('colores', $data);
 ?>
 
 <!doctype html>
-<html lang="es" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="<?= $data['data-sidebar-size']; ?>" data-sidebar-image="none">
+
 <head>
     <title><?= $data['page_title']; ?></title>
     <?php MainHead($data); ?>
@@ -37,7 +38,7 @@
 
                             </div>
                         </div>
-                        
+
 
                         <div class="col-lg-12">
                             <div class="card">
@@ -69,8 +70,8 @@
                 </div>
             </div>
 
-             <!-- FOOTER -->
-             <?php MainFooter($data); ?>
+            <!-- FOOTER -->
+            <?php MainFooter($data); ?>
         </div>
 
     </div>
@@ -80,4 +81,3 @@
 </body>
 
 </html>
-                     

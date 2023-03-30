@@ -27,6 +27,7 @@ class Presentacion extends Controllers
         $data['page_title_bold'] = "Estimado usuario";
         $data['descrption_modal1'] = "Los campos remarcados con";
         $data['descrption_modal2'] = "son necesarios.";
+        $data['data-sidebar-size'] = 'sm';
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
         $this->views->getView($this, "presentacion", $data);
@@ -37,7 +38,7 @@ class Presentacion extends Controllers
     {
         #Cargo el modelo(selectBancos) 
         $arrData = $this->model->selectPresentacion();
-    
+
         for ($i = 0; $i < count($arrData); $i++) {
 
             #Estado
@@ -76,11 +77,11 @@ class Presentacion extends Controllers
 
             #Si no viene ningun ID - Estoy creando 1 nuevo
             if ($intIdPres == 0) {
-                
+
                 #Crear
-                $request_Pres = $this->model-> insertPres($descripcion, $status);
-               
-               /* dep($request_Tipo);
+                $request_Pres = $this->model->insertPres($descripcion, $status);
+
+                /* dep($request_Tipo);
                   exit();*/
 
                 $option = 1;
@@ -91,7 +92,7 @@ class Presentacion extends Controllers
             }
 
             #Verificar
-            if ( $request_Pres > 0) {
+            if ($request_Pres > 0) {
                 if ($option == 1) {
                     $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
                 } else {

@@ -13,7 +13,7 @@
     <!-- Light Logo-->
     <a href="index.html" class="logo logo-light">
       <span class="logo-sm">
-        <img src="public/images/logo-sm.png" alt="" height="22">
+        <img src="public/images/logo-sm.svg" alt="" height="22">
       </span>
       <span class="logo-lg">
         <img src="public/images/logo-light-.svg" alt="" height="50">
@@ -36,139 +36,37 @@
             <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Inicio</span>
           </a>
 
-        <li class="nav-item">
+        <li class="nav-item"><!-- Modulo: Clientes -->
+          <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarApps">
+            <i class="ri-apps-2-line"></i> <span data-key="t-apps">Clientes</span>
+          </a>
+          <div class="collapse menu-dropdown" id="sidebarApps">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <a href="<?= base_url(); ?>/clientes" class="nav-link" data-key="t-calendar"> Agregar ciente </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url(); ?>/Compras" class="nav-link" data-key="t-calendar"> Compras </a>
+              </li>
+            </ul>
+          </div>
+        </li><!-- /Modulo: Clientes -->
+
+        <li class="nav-item"><!-- Modulo: Compras -->
           <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarApps">
             <i class="ri-apps-2-line"></i> <span data-key="t-apps">Compras</span>
           </a>
           <div class="collapse menu-dropdown" id="sidebarApps">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <a href="<?=base_url();?>/proveedores" class="nav-link" data-key="t-calendar"> Proveedores </a>
+                <a href="<?= base_url(); ?>/proveedores" class="nav-link" data-key="t-calendar"> Proveedores </a>
               </li>
               <li class="nav-item">
-                <a href="apps-chat.html" class="nav-link" data-key="t-chat"> Kardex </a>
-              </li>
-              <li class="nav-item">
-                <a href="#sidebarEmail" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
-                  Cotización
-                </a>
-                <div class="collapse menu-dropdown" id="sidebarEmail">
-                  <ul class="nav nav-sm flex-column">
-                    <li class="nav-item">
-                      <a href="apps-mailbox.html" class="nav-link" data-key="t-mailbox"> Reportes </a>
-                    </li>
-
-                  </ul>
-                </div>
-              </li>
-
-
-
-              <li class="nav-item">
-                <a href="#sidebarCrypto" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCrypto" data-key="t-crypto"> Crypto
-                </a>
-                <div class="collapse menu-dropdown" id="sidebarCrypto">
-                  <ul class="nav nav-sm flex-column">
-                    <li class="nav-item">
-                      <a href="apps-crypto-transactions.html" class="nav-link" data-key="t-transactions"> Transactions </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-crypto-buy-sell.html" class="nav-link" data-key="t-buy-sell">
-                        Buy & Sell </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-crypto-orders.html" class="nav-link" data-key="t-orders">
-                        Orders </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-crypto-wallet.html" class="nav-link" data-key="t-my-wallet">
-                        My Wallet </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-crypto-ico.html" class="nav-link" data-key="t-ico-list"> ICO
-                        List </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-crypto-kyc.html" class="nav-link" data-key="t-kyc-application"> KYC Application </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a href="#sidebarInvoices" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarInvoices" data-key="t-invoices">
-                  Invoices
-                </a>
-                <div class="collapse menu-dropdown" id="sidebarInvoices">
-                  <ul class="nav nav-sm flex-column">
-                    <li class="nav-item">
-                      <a href="apps-invoices-list.html" class="nav-link" data-key="t-list-view">
-                        List View </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-invoices-details.html" class="nav-link" data-key="t-details">
-                        Details </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-invoices-create.html" class="nav-link" data-key="t-create-invoice"> Create Invoice </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a href="#sidebarTickets" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTickets" data-key="t-supprt-tickets">
-                  Support Tickets
-                </a>
-                <div class="collapse menu-dropdown" id="sidebarTickets">
-                  <ul class="nav nav-sm flex-column">
-                    <li class="nav-item">
-                      <a href="apps-tickets-list.html" class="nav-link" data-key="t-list-view">
-                        List View </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-tickets-details.html" class="nav-link" data-key="t-ticket-details"> Ticket Details </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a href="#sidebarnft" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarnft" data-key="t-nft-marketplace">
-                  NFT Marketplace <span class="badge badge-pill bg-danger" data-key="t-new">New</span>
-                </a>
-                <div class="collapse menu-dropdown" id="sidebarnft">
-                  <ul class="nav nav-sm flex-column">
-                    <li class="nav-item">
-                      <a href="apps-nft-marketplace.html" class="nav-link" data-key="t-marketplace"> Marketplace </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-nft-explore.html" class="nav-link" data-key="t-explore-now"> Explore Now </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-nft-auction.html" class="nav-link" data-key="t-live-auction"> Live Auction </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-nft-item-details.html" class="nav-link" data-key="t-item-details"> Item Details </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-nft-collections.html" class="nav-link" data-key="t-collections"> Collections </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-nft-creators.html" class="nav-link" data-key="t-creators"> Creators </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-nft-ranking.html" class="nav-link" data-key="t-ranking"> Ranking </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-nft-wallet.html" class="nav-link" data-key="t-wallet-connect"> Wallet Connect </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="apps-nft-create.html" class="nav-link" data-key="t-create-nft"> Create NFT </a>
-                    </li>
-                  </ul>
-                </div>
+                <a href="<?= base_url(); ?>/Compras" class="nav-link" data-key="t-calendar"> Compras </a>
               </li>
             </ul>
           </div>
-        </li>
+        </li><!-- /Modulo: Compras -->
 
         <li class="nav-item">
           <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLayouts">
@@ -372,11 +270,11 @@
           <div class="collapse menu-dropdown" id="sidebarPages">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <a href="<?=base_url();?>/usuarios" class="nav-link" data-key="t-starter">Usuarios</a>
+                <a href="<?= base_url(); ?>/usuarios" class="nav-link" data-key="t-starter">Usuarios</a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url();?>/tipos" class="nav-link" data-key="t-team">Tipos de usuarios</a>
-              </li>              
+                <a href="<?= base_url(); ?>/tipos" class="nav-link" data-key="t-team">Tipos de usuarios</a>
+              </li>
             </ul>
           </div>
         </li>
@@ -388,25 +286,25 @@
           <div class="collapse menu-dropdown" id="sidebarLanding">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <a href="<?=base_url();?>/bancos" class="nav-link" data-key="t-one-page">Bancos</a>
+                <a href="<?= base_url(); ?>/bancos" class="nav-link" data-key="t-one-page">Bancos</a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url();?>/colores" class="nav-link" data-key="t-nft-landing">Colores</a>
+                <a href="<?= base_url(); ?>/colores" class="nav-link" data-key="t-nft-landing">Colores</a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url();?>/contacto" class="nav-link" data-key="t-nft-landing">Contacto</a>
+                <a href="<?= base_url(); ?>/contacto" class="nav-link" data-key="t-nft-landing">Contacto</a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url();?>/formaPago" class="nav-link" data-key="t-nft-landing">Forma de pago</a>
+                <a href="<?= base_url(); ?>/formaPago" class="nav-link" data-key="t-nft-landing">Forma de pago</a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url();?>/moneda" class="nav-link" data-key="t-nft-landing">Moneda</a>
+                <a href="<?= base_url(); ?>/moneda" class="nav-link" data-key="t-nft-landing">Moneda</a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url();?>/pais" class="nav-link" data-key="t-nft-landing">Pais</a>
+                <a href="<?= base_url(); ?>/pais" class="nav-link" data-key="t-nft-landing">Pais</a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url();?>/presentacion" class="nav-link" data-key="t-nft-landing">Presentación</a>
+                <a href="<?= base_url(); ?>/presentacion" class="nav-link" data-key="t-nft-landing">Presentación</a>
               </li>
             </ul>
           </div>

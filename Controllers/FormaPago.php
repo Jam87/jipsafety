@@ -27,6 +27,7 @@ class FormaPago extends Controllers
         $data['page_title_bold'] = "Estimado usuario";
         $data['descrption_modal1'] = "Los campos remarcados con";
         $data['descrption_modal2'] = "son necesarios.";
+        $data['data-sidebar-size'] = 'sm';
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
         $this->views->getView($this, "formaPago", $data);
@@ -81,16 +82,16 @@ class FormaPago extends Controllers
 
             $descripcion = strClean($_POST['txtName']);
             $nota        = strClean($_POST['txtDescription']);
-            $listVenta   = intval($_POST['listVenta']); 
+            $listVenta   = intval($_POST['listVenta']);
             $status      = intval($_POST['listStatus']);
 
             #Si no viene ningun ID - Estoy creando 1 nuevo
             if ($intIdPago == 0) {
-                
+
                 #Crear
                 $request_Pago = $this->model->insertPago($descripcion, $nota, $listVenta, $status);
-               
-               /* dep($request_Tipo);
+
+                /* dep($request_Tipo);
                   exit();*/
 
                 $option = 1;

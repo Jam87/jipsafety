@@ -4,7 +4,7 @@ getModal('Usuarios', $data);
 ?>
 
 <!doctype html>
-<html lang="es" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="<?= $data['data-sidebar-size']; ?>" data-sidebar-image="none">
 
 <head>
     <title><?= $data['page_title']; ?></title>

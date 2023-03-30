@@ -27,6 +27,7 @@ class Tipos extends Controllers
         $data['page_title_bold'] = "Estimado usuario";
         $data['descrption_modal1'] = "Los campos remarcados con";
         $data['descrption_modal2'] = "son necesarios.";
+        $data['data-sidebar-size'] = 'sm';
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
         $this->views->getView($this, "tipos", $data);
@@ -78,8 +79,8 @@ class Tipos extends Controllers
             if ($intIdTipo == 0) {
                 #Crear
                 $request_Tipo = $this->model->insertTipo($name, $description, $status);
-               
-               /* dep($request_Tipo);
+
+                /* dep($request_Tipo);
                   exit();*/
 
                 $option = 1;

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="<?= $data['data-sidebar-size']; ?>" data-sidebar-image="none">
 
 <head>
 
@@ -1184,17 +1184,17 @@
             </div>
             <!-- End Page-content -->
 
-           
+
         </div>
         <!-- end main content-->
 
     </div>
     <!-- END layout-wrapper -->
-    
-     <!-- FOOTER -->
-     <?php MainFooter($data); ?>
 
-   
+    <!-- FOOTER -->
+    <?php MainFooter($data); ?>
+
+
     <!--start back-to-top-->
     <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
         <i class="ri-arrow-up-line"></i>
@@ -1204,7 +1204,7 @@
 
     <!-- JAVASCRIPT -->
     <?php MainJs($data); ?>
-  
+
 </body>
 
 </html>

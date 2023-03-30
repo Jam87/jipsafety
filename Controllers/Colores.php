@@ -27,6 +27,7 @@ class Colores extends Controllers
         $data['page_title_bold'] = "Estimado usuario";
         $data['descrption_modal1'] = "Los campos remarcados con";
         $data['descrption_modal2'] = "son necesarios.";
+        $data['data-sidebar-size'] = 'sm';
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
         $this->views->getView($this, "colores", $data);
@@ -37,7 +38,7 @@ class Colores extends Controllers
     {
         #Cargo el modelo(selectBancos) 
         $arrData = $this->model->selectColores();
-    
+
         for ($i = 0; $i < count($arrData); $i++) {
 
             #Estado
@@ -73,14 +74,14 @@ class Colores extends Controllers
             $descripcion  = strClean($_POST['txtName']);
             $txtColor     = strClean($_POST['txtColor']);
             $status       = intval($_POST['listStatus']);
-          
+
             #Si no viene ningun ID - Estoy creando 1 nuevo
             if ($intIdColor == 0) {
-                
+
                 #Crear
-                $request_Color = $this->model-> insertColor($descripcion, $txtColor, $status);
-               
-               /* dep($request_Tipo);
+                $request_Color = $this->model->insertColor($descripcion, $txtColor, $status);
+
+                /* dep($request_Tipo);
                   exit();*/
 
                 $option = 1;
@@ -91,7 +92,7 @@ class Colores extends Controllers
             }
 
             #Verificar
-            if ( $request_Color > 0) {
+            if ($request_Color > 0) {
                 if ($option == 1) {
                     $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
                 } else {

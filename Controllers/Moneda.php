@@ -27,6 +27,7 @@ class Moneda extends Controllers
         $data['page_title_bold'] = "Estimado usuario";
         $data['descrption_modal1'] = "Los campos remarcados con";
         $data['descrption_modal2'] = "son necesarios.";
+        $data['data-sidebar-size'] = 'sm';
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
         $this->views->getView($this, "moneda", $data);
@@ -56,8 +57,8 @@ class Moneda extends Controllers
 
             #Botones de accion
             $arrData[$i]['options'] = '<div class="text-center">
-				<button type="button" class="btn btn-warning btn-sm btnEditBanco" onClick="fntEditMoneda('. $arrData[$i]['cod_moneda'] . ')" title="Editar"><i class="ri-edit-2-line"></i></button>
-				<button type="button" class="btn btn-danger btn-sm btnDelBanco" onClick="fntDelMoneda('. $arrData[$i]['cod_moneda'] . ')" title="Eliminar"><i class="ri-delete-bin-5-line"></i></button>
+				<button type="button" class="btn btn-warning btn-sm btnEditBanco" onClick="fntEditMoneda(' . $arrData[$i]['cod_moneda'] . ')" title="Editar"><i class="ri-edit-2-line"></i></button>
+				<button type="button" class="btn btn-danger btn-sm btnDelBanco" onClick="fntDelMoneda(' . $arrData[$i]['cod_moneda'] . ')" title="Eliminar"><i class="ri-delete-bin-5-line"></i></button>
 				</div>';
         }
 
@@ -79,17 +80,17 @@ class Moneda extends Controllers
             #Capturo los datos
             $intIdMoneda = intval($_POST['idMoneda']);
             $nombre      = strClean($_POST['txtName']);
-            $listLocal   = intval($_POST['listLocal']); 
+            $listLocal   = intval($_POST['listLocal']);
             $status      = intval($_POST['listStatus']);
 
-            
+
             #Si no viene ningun ID - Estoy creando 1 nuevo
             if ($intIdMoneda == 0) {
-                
+
                 #Crear
                 $request_Moneda = $this->model->insertMoneda($nombre, $listLocal, $status);
-               
-               /* dep($request_Tipo);
+
+                /* dep($request_Tipo);
                   exit();*/
 
                 $option = 1;
@@ -124,7 +125,7 @@ class Moneda extends Controllers
         if ($_POST) {
 
             $intIdMoneda = intval($_POST['cod_moneda']);
-         
+
             $requestDelete = $this->model->deleteMoneda($intIdMoneda);
 
             if ($requestDelete) {

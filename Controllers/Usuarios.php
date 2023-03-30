@@ -29,8 +29,9 @@ class Usuarios extends Controllers
         $data['descrption_modal2'] = "son necesarios.";
 
         $data['btn_title_principal'] = "Nuevo usuario.";
+        $data['data-sidebar-size'] = 'sm';
 
-         #Cargo la vista(usuario). 
+        #Cargo la vista(usuario). 
         $this->views->getView($this, "usuarios", $data);
     }
 

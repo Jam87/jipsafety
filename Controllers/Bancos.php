@@ -27,6 +27,7 @@ class Bancos extends Controllers
         $data['page_title_bold'] = "Estimado usuario";
         $data['descrption_modal1'] = "Los campos remarcados con";
         $data['descrption_modal2'] = "son necesarios.";
+        $data['data-sidebar-size'] = 'sm';
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
         $this->views->getView($this, "bancos", $data);
@@ -81,16 +82,16 @@ class Bancos extends Controllers
 
             $name       = strClean($_POST['txtName']);
             $nota       = strClean($_POST['txtDescription']);
-            $listLocal  = intval($_POST['listLocal']); 
+            $listLocal  = intval($_POST['listLocal']);
             $status     = intval($_POST['listStatus']);
 
             #Si no viene ningun ID - Estoy creando 1 nuevo
             if ($intIdBanco == 0) {
-                
+
                 #Crear
                 $request_Banco = $this->model->insertBanco($name, $nota, $listLocal, $status);
-               
-               /* dep($request_Tipo);
+
+                /* dep($request_Tipo);
                   exit();*/
 
                 $option = 1;
