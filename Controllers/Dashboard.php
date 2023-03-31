@@ -19,7 +19,7 @@ class Dashboard extends Controllers
 		$data['page_tag'] = "";
 		$data['page_title'] = "Dashboard - jipsafety";
 		$data['page_name'] = "Dashboard";
-		$data['data-sidebar-size'] = 'lg';
+		$data['data-sidebar-size'] = "sm";
 		#lg
 
 		#Cargo la vista(dashboard). A traves del metodo(getView)

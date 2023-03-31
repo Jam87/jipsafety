@@ -20,6 +20,7 @@ class Bancos extends Controllers
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
         $data['breadcrumb-activo'] = "Usuario";
+        $data['data-sidebar-size'] = "sm";
         $data['page_functions_js'] = "functions_bancos.js";
 
         #Data modal

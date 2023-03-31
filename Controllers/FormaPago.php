@@ -20,6 +20,7 @@ class FormaPago extends Controllers
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
         $data['breadcrumb-activo'] = "Usuario";
+
         $data['page_functions_js'] = "functions_forma_pago.js";
 
         #Data modal
