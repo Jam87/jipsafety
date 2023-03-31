@@ -30,10 +30,7 @@
  
  <!-- Dashboard init -->
  <script src="<?= base_url(); ?>/public/js/pages/dashboard-ecommerce.init.js"></script>
- 
- <!-- App js -->
- 
- 
+  
  <script src="<?= base_url(); ?>/public/lib/select2/js/select2.min.js"></script>
 
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -46,6 +43,10 @@
  <script src="<?= base_url(); ?>/public/js/pages/form-validation.init.js"></script>
  <!-- password create init -->
  <script src="<?= base_url(); ?>/public/js/pages/passowrd-create.init.js"></script>
+
+  <!-- App js -->
+  <script src="<?= base_url(); ?>/public/js/app.js"></script>
+ 
 
  <!-- Cargar DataTable, etc-->
  <!--jQuery-->
