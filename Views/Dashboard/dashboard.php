@@ -10,7 +10,7 @@
 
 <body>
 
-    <!-- Begin page -->
+    <!-- -Begin page --->
     <div id="layout-wrapper">
 
         <!-- ==== Main Header ====== -->
