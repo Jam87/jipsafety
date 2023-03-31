@@ -43,7 +43,7 @@
  <script src="public/js/pages/dashboard-ecommerce.init.js"></script>
 
  <!-- App js -->
- <script src="public/js/app.js"></script>
+
 
  <script src="public/lib/select2/js/select2.min.js"></script>
 
