@@ -11,7 +11,9 @@
  <script src="<?= base_url(); ?>/public/js/plugins.js"></script>
 
  
- 
+ <!--Invoice create init js-->
+ <script src="<?= base_url(); ?>/public/js/pages/invoicecreate.init.js"></script>
+
  <!-- apexcharts -->
  <script src="<?= base_url(); ?>/public/lib/apexcharts/apexcharts.min.js"></script>
  
