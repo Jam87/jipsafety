@@ -115,7 +115,7 @@ function fntDelBanco(idbanco) {
   }).then((result) => {
     if (result.isConfirmed) {
       let request = new XMLHttpRequest();
-      let ajaxUrl = base_url + "/Bancos/delBanco";
+      let ajaxUrl = base_url + "/Banco/delBanco";
       let strData = "cod_bancos=" + idbanco;
 
       request.open("POST", ajaxUrl, true);
@@ -177,9 +177,9 @@ function fntEditBanco(idbanco) {
   var idbanco = idbanco;
 
   //Cambio estilos al modal
-  document
-    .querySelector(".modal-header")
-    .classList.replace("bg-pattern", "bg-pattern-2");
+  document;
+  //.querySelector(".modal-header")
+  //.classList.replace("bg-pattern", "bg-pattern-2");
   document.querySelector("#titleModal").innerHTML = "Actualizar Banco";
   document
     .querySelector(".modal-header")
@@ -191,7 +191,7 @@ function fntEditBanco(idbanco) {
   document.querySelector("#formBanco").reset();
 
   var request = (request = new XMLHttpRequest());
-  var ajaxUrl = base_url + "/Bancos/getBanco/" + idbanco;
+  var ajaxUrl = base_url + "/Banco/getBanco/" + idbanco;
   request.open("GET", ajaxUrl, true);
   request.send();
 

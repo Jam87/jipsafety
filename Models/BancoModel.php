@@ -1,11 +1,11 @@
 <?php
- ### CLASE: PagoModel ###
-class PagoModel extends Mysql
+### CLASE: BancosModel ###
+class BancoModel extends Mysql
 {
-    private $cod_forma_pago;
-    private $descripcion;
-    private $nota_forma_pago;
-    private $es_aplicado_ventas;
+    private $cod_bancos;
+    private $nombre_banco;
+    private $nota_banco;
+    private $es_local;
     private $date_registro;
     private $activo;
 
@@ -14,11 +14,11 @@ class PagoModel extends Mysql
         parent::__construct();
     }
 
-    ### MODELO: MOSTRAR TODOS LAS LAS FORMAS DE PAGO ###
-    public function getFormaPago()
+    ### MODELO: MOSTRAR TODOS LOS BANCOS ###
+    public function selectBancos()
     {
         #Sentencia
-        $sql = "SELECT * FROM  cat_forma_pago WHERE activo != 0";
+        $sql = "SELECT * FROM  cat_bancos WHERE activo != 0";
 
         #Mando a llamar la función(select_all)
         $request = $this->select_all($sql);
@@ -37,9 +37,9 @@ class PagoModel extends Mysql
 
         #Sentencia
         $sql = "SELECT * FROM cat_bancos WHERE nombre_banco = '{$this->nombre_banco}' ";
-        
+
         #Mando a llamar la función(select_all)
-        $request = $this->select_all($sql);        
+        $request = $this->select_all($sql);
 
         /*var_dump($request);
           exit();*/
@@ -81,11 +81,12 @@ class PagoModel extends Mysql
         }
         return $request;
     }
- 
+
 
     ### MODELO: EDITAR BANCO ###
-    public function editBanco(int $idBanco){
-        
+    public function editBanco(int $idBanco)
+    {
+
         //Buscar Tipo de Usuario
         $this->cod_bancos = $idBanco;
         $sql = "SELECT * FROM cat_bancos WHERE cod_bancos = '{$this->cod_bancos}'";
@@ -93,9 +94,10 @@ class PagoModel extends Mysql
         return $request;
     }
 
-   
+
     ### MODELO: ACTUALIZAR BANCO ###
-    public function updateBanco(int $intIdBanco, string $name, string $nota, $listLocal, int $status){
+    public function updateBanco(int $intIdBanco, string $name, string $nota, $listLocal, int $status)
+    {
 
         $this->cod_bancos   = $intIdBanco;
         $this->nombre_banco = $name;
@@ -108,15 +110,13 @@ class PagoModel extends Mysql
         $sql = "SELECT * FROM cat_bancos WHERE nombre_banco = '$this->nombre_banco' AND cod_bancos != $this->cod_bancos";
         $request = $this->select_all($sql);
 
-        if(empty($request))
-        {
+        if (empty($request)) {
             $sql = "UPDATE cat_bancos SET nombre_banco = ?, nota_banco = ?, es_local = ?, date_registro = ?, activo = ? WHERE cod_bancos  = $this->cod_bancos";
             $arrData = array($this->nombre_banco, $this->nota_banco, $this->es_local, $this->date_registro, $this->activo);
-            $request = $this->update($sql,$arrData);
-        }else{
+            $request = $this->update($sql, $arrData);
+        } else {
             $request = "exist";
         }
-        return $request;			
+        return $request;
     }
-   
 }
