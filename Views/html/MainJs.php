@@ -10,27 +10,27 @@
  <script src="<?= base_url(); ?>/public/js/pages/plugins/lord-icon-2.1.0.js"></script>
  <script src="<?= base_url(); ?>/public/js/plugins.js"></script>
 
- 
+
  <!--Invoice create init js-->
  <script src="<?= base_url(); ?>/public/js/pages/invoicecreate.init.js"></script>
 
  <!-- apexcharts -->
  <script src="<?= base_url(); ?>/public/lib/apexcharts/apexcharts.min.js"></script>
- 
+
  <!-- Vector map -->
  <script src="<?= base_url(); ?>/public/lib/jsvectormap/js/jsvectormap.min.js"></script>
  <script src="<?= base_url(); ?>/public/lib/jsvectormap/maps/world-merc.js"></script>
 
-  <!-- choices.min.js -->
-  <script src="<?= base_url(); ?>/public/lib/choices.js/public/assets/scripts/choices.min.js"></script>
+ <!-- choices.min.js -->
+ <script src="<?= base_url(); ?>/public/lib/choices.js/public/assets/scripts/choices.min.js"></script>
 
  <!--Swiper slider js-->
  <script src="<?= base_url(); ?>/public/lib/swiper/swiper-bundle.min.js"></script>
- 
- 
+
+
  <!-- Dashboard init -->
  <script src="<?= base_url(); ?>/public/js/pages/dashboard-ecommerce.init.js"></script>
-  
+
  <script src="<?= base_url(); ?>/public/lib/select2/js/select2.min.js"></script>
 
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -44,9 +44,16 @@
  <!-- password create init -->
  <script src="<?= base_url(); ?>/public/js/pages/passowrd-create.init.js"></script>
 
-  <!-- App js -->
+ <!-- flatpickr  -->
+ <script src="<?= base_url(); ?>/public/lib/flatpickr/flatpickr.min.js"></script>
+
+ <!-- choices.js  -->
+ <script src="<?= base_url(); ?>/public/lib/choices/public/assets/scripts/choices.min.js"></script>
+c
+
+ <!-- App js -->
  <script src="<?= base_url(); ?>/public/js/app.js"></script>
- 
+
 
  <!-- Cargar DataTable, etc-->
  <!--jQuery-->
