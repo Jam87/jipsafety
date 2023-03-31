@@ -1,7 +1,8 @@
  <script>
      //system url
-     let base_url = "<?= base_url(); ?>";
+     const base_url = "<?= base_url(); ?>";
  </script>
+ 
  <script src="<?= base_url(); ?>/public/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
  <script src="<?= base_url(); ?>/public/lib/simplebar/simplebar.min.js"></script>
  <script src="<?= base_url(); ?>/public/lib/node-waves/waves.min.js"></script>
@@ -9,6 +10,42 @@
  <script src="<?= base_url(); ?>/public/js/pages/plugins/lord-icon-2.1.0.js"></script>
  <!--<script src="public/js/plugins.js"></script>-->
 
+ 
+ 
+ <!-- apexcharts -->
+ <script src="<?= base_url(); ?>/public/lib/apexcharts/apexcharts.min.js"></script>
+ 
+ <!-- Vector map -->
+ <script src="<?= base_url(); ?>/public/lib/jsvectormap/js/jsvectormap.min.js"></script>
+ <script src="<?= base_url(); ?>/public/lib/jsvectormap/maps/world-merc.js"></script>
+
+  <!-- choices.min.js -->
+  <script src="<?= base_url(); ?>/public/lib/choices.js/public/assets/scripts/choices.min.js"></script>
+
+ <!--Swiper slider js-->
+ <script src="<?= base_url(); ?>/public/lib/swiper/swiper-bundle.min.js"></script>
+ 
+ 
+ <!-- Dashboard init -->
+ <script src="<?= base_url(); ?>/public/js/pages/dashboard-ecommerce.init.js"></script>
+ 
+ <!-- App js -->
+ 
+ 
+ <script src="<?= base_url(); ?>/public/lib/select2/js/select2.min.js"></script>
+
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+ <!-- particles js -->
+ <script src="<?= base_url(); ?>/public/lib/particles.js/particles.js"></script>
+ <!-- particles app js -->
+ <script src="<?= base_url(); ?>/public/js/pages/particles.app.js"></script>
+ <!-- validation init -->
+ <script src="<?= base_url(); ?>/public/js/pages/form-validation.init.js"></script>
+ <!-- password create init -->
+ <script src="<?= base_url(); ?>/public/js/pages/passowrd-create.init.js"></script>
+
+ <!-- Cargar DataTable, etc-->
  <!--jQuery-->
  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -24,39 +61,4 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 
-
- <!-- apexcharts -->
- <script src="<?= base_url(); ?>/public/lib/apexcharts/apexcharts.min.js"></script>
-
- <!-- Vector map -->
- <script src="<?= base_url(); ?>/public/lib/jsvectormap/js/jsvectormap.min.js"></script>
- <script src="<?= base_url(); ?>/public/lib/jsvectormap/maps/world-merc.js"></script>
-
-  <!-- choices.min.js -->
-  <script src="<?= base_url(); ?>/public/lib/choices.js/public/assets/scripts/choices.min.js"></script>
-
- <!--Swiper slider js-->
- <script src="<?= base_url(); ?>/public/lib/swiper/swiper-bundle.min.js"></script>
-
-
- <!-- Dashboard init -->
- <script src="<?= base_url(); ?>/public/js/pages/dashboard-ecommerce.init.js"></script>
-
- <!-- App js -->
-
-
- <script src="<?= base_url(); ?>/public/lib/select2/js/select2.min.js"></script>
-
- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
- <!-- particles js -->
- <script src="<?= base_url(); ?>/public/lib/particles.js/particles.js"></script>
- <!-- particles app js -->
- <script src="<?= base_url(); ?>/public/js/pages/particles.app.js"></script>
- <!-- validation init -->
- <script src="<?= base_url(); ?>/public/js/pages/form-validation.init.js"></script>
- <!-- password create init -->
- <script src="<?= base_url(); ?>/public/js/pages/passowrd-create.init.js"></script>
-
- <!-- Cargar DataTable, etc-->
  <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
