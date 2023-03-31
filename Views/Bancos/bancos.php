@@ -1,6 +1,6 @@
 <?php
 #Mando a llamar al modal
-getModal('colores', $data);
+getModal('bancos', $data);
 ?>
 
 <!doctype html>
@@ -49,11 +49,11 @@ getModal('colores', $data);
                                 </div>
                                 <div class="card-body">
                                     <!-- Tabla de Tipo de usuario -->
-                                    <table id="table-colores" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
+                                    <table id="table-bancos" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Descripción</th>
-                                                <th>codigo_html</th>
+                                                <th>Nombre del banco</th>
+                                                <th>Localidad</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>
