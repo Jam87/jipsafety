@@ -285,11 +285,6 @@
             </div>
             <!-- End Page-content -->
 			
-			
-			
-			
-			
-
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
@@ -319,7 +314,7 @@
     <!-- JAVASCRIPT -->
     <?php MainJs($data); ?>
 	
-    <script>
+   <!-- <script>
         $(document).ready(function () {
             $("#txtpbuscar").keyup(function () {
                 _this = this;
@@ -423,7 +418,7 @@
               tbody.append(fila_nueva); 
            });
         }
-    </script>
+    </script>-->
 </body>
 
 </html>
