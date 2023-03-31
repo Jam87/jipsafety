@@ -1,6 +1,6 @@
 <?php
 #Mando a llamar al modal
-getModal('Usuarios', $data);
+getModal('usuarios', $data);
 ?>
 
 <!doctype html>

@@ -1,6 +1,6 @@
 <?php
 #Mando a llamar al modal
-getModal('Bancos', $data);
+getModal('bancos', $data);
 ?>
 
 <!doctype html>

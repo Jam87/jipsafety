@@ -1,6 +1,6 @@
 <?php
 #Mando a llamar al modal
-getModal('Pais', $data);
+getModal('pais', $data);
 ?>
 
 <!doctype html>
