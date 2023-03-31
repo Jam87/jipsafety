@@ -7,7 +7,7 @@
  <script src="public/lib/node-waves/waves.min.js"></script>
  <script src="public/lib/feather-icons/feather.min.js"></script>
  <script src="public/js/pages/plugins/lord-icon-2.1.0.js"></script>
- <script src="public/js/plugins.js"></script>
+ <!--<script src="public/js/plugins.js"></script>-->
 
  <!--jQuery-->
  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -28,12 +28,16 @@
  <!-- apexcharts -->
  <script src="public/lib/apexcharts/apexcharts.min.js"></script>
 
- <!-- Vector map-->
+ <!-- Vector map -->
  <script src="public/lib/jsvectormap/js/jsvectormap.min.js"></script>
  <script src="public/lib/jsvectormap/maps/world-merc.js"></script>
 
+  <!-- choices.min.js -->
+  <script src="public/lib/choices.js/public/assets/scripts/choices.min.js"></script>
+
  <!--Swiper slider js-->
  <script src="public/lib/swiper/swiper-bundle.min.js"></script>
+
 
  <!-- Dashboard init -->
  <script src="public/js/pages/dashboard-ecommerce.init.js"></script>

@@ -298,7 +298,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                Diseñado & Desarrollado por J.I.P
+                                Diseï¿½ado & Desarrollado por J.I.P
                             </div>
                         </div>
                     </div>
@@ -369,7 +369,7 @@
                     }
                     else
                     {
-                        alert("Ocurrió un error inesperado.");
+                        alert("Ocurriï¿½ un error inesperado.");
                     }
 
                 },
