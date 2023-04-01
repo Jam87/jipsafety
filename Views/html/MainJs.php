@@ -54,6 +54,8 @@ c
  <!-- App js -->
  <script src="<?= base_url(); ?>/public/js/app.js"></script>
 
+ <script src="<?= base_url(); ?>/public/js/layout.js"></script>
+
 
  <!-- Cargar DataTable, etc-->
  <!--jQuery-->
