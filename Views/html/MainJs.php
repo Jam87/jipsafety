@@ -8,7 +8,7 @@
  <script src="<?= base_url(); ?>/public/lib/node-waves/waves.min.js"></script>
  <script src="<?= base_url(); ?>/public/lib/feather-icons/feather.min.js"></script>
  <script src="<?= base_url(); ?>/public/js/pages/plugins/lord-icon-2.1.0.js"></script>
- <script src="<?= base_url(); ?>/public/js/plugins.js"></script>
+
 
 
  <!--Invoice create init js-->
