@@ -30,6 +30,8 @@
 
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+ <!-- particles js -->
+ <script src="<?= base_url(); ?>public/lib/particles.js/particles.js"></script>
  <!-- particles app js -->
  <script src="<?= base_url(); ?>public/js/pages/particles.app.js"></script>
  <!-- validation init -->
