@@ -10,10 +10,6 @@
  <script src="<?= base_url(); ?>public/js/pages/plugins/lord-icon-2.1.0.js"></script>
 
 
-
- <!--Invoice create init js-->
- <script src="<?= base_url(); ?>public/js/pages/invoicecreate.init.js"></script>
-
  <!-- apexcharts -->
  <script src="<?= base_url(); ?>public/lib/apexcharts/apexcharts.min.js"></script>
 
@@ -26,7 +22,6 @@
 
  <!--Swiper slider js-->
  <script src="<?= base_url(); ?>public/lib/swiper/swiper-bundle.min.js"></script>
-
 
  <!-- Dashboard init -->
  <script src="<?= base_url(); ?>public/js/pages/dashboard-ecommerce.init.js"></script>
@@ -49,7 +44,9 @@
 
  <!-- choices.js  -->
  <script src="<?= base_url(); ?>public/lib/choices/public/assets/scripts/choices.min.js"></script>
-c
+
+  <!--Invoice create init js-->
+  <script src="<?= base_url(); ?>public/js/pages/invoicecreate.init.js"></script>
 
  <!-- App js -->
  <script src="<?= base_url(); ?>public/js/app.js"></script>
