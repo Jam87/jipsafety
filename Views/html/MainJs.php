@@ -30,7 +30,8 @@
 
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  <?php
-    $archivo_actual = $_SERVER['PHP_SELF']; 
+ 
+    $archivo_actual = $_SERVER['PHP_SELF'];  //Ruta 
     if($archivo_actual == '/login.php'):
  ?>    
     <!-- particles js -->
