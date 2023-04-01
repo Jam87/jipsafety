@@ -43,10 +43,10 @@
           <div class="collapse menu-dropdown" id="sidebarApps">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/clientes" class="nav-link" data-key="t-calendar"> Agregar ciente </a>
+                <a href="<?= base_url(); ?>clientes" class="nav-link" data-key="t-calendar"> Agregar ciente </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/Compras" class="nav-link" data-key="t-calendar"> Compras </a>
+                <a href="<?= base_url(); ?>compras" class="nav-link" data-key="t-calendar">  </a>
               </li>
             </ul>
           </div>
@@ -59,10 +59,10 @@
           <div class="collapse menu-dropdown" id="sidebarApps">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/proveedores" class="nav-link" data-key="t-calendar"> Proveedores </a>
+                <a href="<?= base_url(); ?>proveedores" class="nav-link" data-key="t-calendar"> Proveedores </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/Compras" class="nav-link" data-key="t-calendar"> Compras </a>
+                <a href="<?= base_url(); ?>Compras" class="nav-link" data-key="t-calendar"> Compras </a>
               </li>
             </ul>
           </div>
@@ -270,10 +270,10 @@
           <div class="collapse menu-dropdown" id="sidebarPages">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/usuarios" class="nav-link" data-key="t-starter">Usuarios</a>
+                <a href="<?= base_url(); ?>usuarios" class="nav-link" data-key="t-starter">Usuarios</a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/tipos" class="nav-link" data-key="t-team">Tipos de usuarios</a>
+                <a href="<?= base_url(); ?>tipos" class="nav-link" data-key="t-team">Tipos de usuarios</a>
               </li>
             </ul>
           </div>
@@ -286,25 +286,25 @@
           <div class="collapse menu-dropdown" id="sidebarLanding">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/banco" class="nav-link" data-key="t-one-page">Bancos</a>
+                <a href="<?= base_url(); ?>banco" class="nav-link" data-key="t-one-page">Bancos</a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/colores" class="nav-link" data-key="t-nft-landing">Colores</a>
+                <a href="<?= base_url(); ?>colores" class="nav-link" data-key="t-nft-landing">Colores</a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/contacto" class="nav-link" data-key="t-nft-landing">Contacto</a>
+                <a href="<?= base_url(); ?>contacto" class="nav-link" data-key="t-nft-landing">Contacto</a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/formaPago" class="nav-link" data-key="t-nft-landing">Forma de pago</a>
+                <a href="<?= base_url(); ?>formaPago" class="nav-link" data-key="t-nft-landing">Forma de pago</a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/moneda" class="nav-link" data-key="t-nft-landing">Moneda</a>
+                <a href="<?= base_url(); ?>moneda" class="nav-link" data-key="t-nft-landing">Moneda</a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/pais" class="nav-link" data-key="t-nft-landing">Pais</a>
+                <a href="<?= base_url(); ?>pais" class="nav-link" data-key="t-nft-landing">Pais</a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/presentacion" class="nav-link" data-key="t-nft-landing">Presentación</a>
+                <a href="<?= base_url(); ?>presentacion" class="nav-link" data-key="t-nft-landing">Presentación</a>
               </li>
             </ul>
           </div>
