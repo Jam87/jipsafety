@@ -18,8 +18,6 @@
 
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
 
-<!-- Layout config Js -->
-<script src="<? base_url(); ?>public/js/layout.js"></script>
 <!-- Bootstrap Css -->
 <link href="<?= base_url(); ?>public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <!-- Icons Css -->
