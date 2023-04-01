@@ -7,7 +7,7 @@ class Login extends Controllers
 		session_start();#Inicio sesion
 		if(isset($_SESSION['login']))
 		{
-				header('Location: '.base_url().'/dashboard');	
+				header('Location: '.base_url().'dashboard');	
 		}
 		parent::__construct();
 	}
