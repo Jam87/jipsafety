@@ -34,10 +34,7 @@
     $archivo_actual = $_SERVER['PHP_SELF'];  //Ruta 
     if($_GET['url'] == 'login.php'):
  ?>    
-    <!-- particles js -->
-    <script src="<?= base_url(); ?>public/lib/particles.js/particles.js"></script>
-    <!-- particles app js -->
-    <script src="<?= base_url(); ?>public/js/pages/particles.app.js"></script>
+   
 <?php 
  endif;
  ?>

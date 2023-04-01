@@ -121,6 +121,10 @@
     <!--<script src="public/js/pages/form-validation.init.js"></script>-->
     <!-- password create init -->
     <!--<script src="public/js/pages/passowrd-create.init.js"></script>-->
+     <!-- particles js -->
+     <script src="<?= base_url(); ?>public/lib/particles.js/particles.js"></script>
+    <!-- particles app js -->
+    <script src="<?= base_url(); ?>public/js/pages/particles.app.js"></script>
 
     <?php MainJs($data); ?>
 </body>
