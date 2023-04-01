@@ -114,7 +114,7 @@
       ("twocolumn" != t && "twocolumn" != a["data-layout"]) ||
       ((document.querySelector(".navbar-menu").innerHTML = c),
       ((n = document.createElement("ul")).innerHTML =
-        '<a href="#" class="logo"><img src="<?= base_url();?>/public/images/logo-sm.png" alt="" height="22"></a>'),
+        '<a href="#" class="logo"><img src="/public/images/logo-sm.png" alt="" height="22"></a>'),
       Array.from(
         document.getElementById("navbar-nav").querySelectorAll(".menu-link")
       ).forEach(function (e) {
