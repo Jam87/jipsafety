@@ -29,11 +29,20 @@
  <script src="<?= base_url(); ?>public/lib/select2/js/select2.min.js"></script>
 
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <?php
+    $archivo_actual = $_SERVER['PHP_SELF']; 
+    if($archivo_actual == '/login.php'):
+ ?>    
+    <!-- particles js -->
+    <script src="<?= base_url(); ?>public/lib/particles.js/particles.js"></script>
+    <!-- particles app js -->
+    <script src="<?= base_url(); ?>public/js/pages/particles.app.js"></script>
+<?php 
+ endif;
+ ?>
 
- <!-- particles js -->
- <script src="<?= base_url(); ?>public/lib/particles.js/particles.js"></script>
- <!-- particles app js -->
- <script src="<?= base_url(); ?>public/js/pages/particles.app.js"></script>
+
+
  <!-- validation init -->
  <script src="<?= base_url(); ?>public/js/pages/form-validation.init.js"></script>
  <!-- password create init -->
