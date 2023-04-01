@@ -7,7 +7,7 @@ require_once "Helpers/Helpers.php";
 ### RECOJO DATO DE LA URL ###
 # Si no viene ningun parametro por default me va a cargar: Controlador:home Modelo:home
 
-$url =  !empty($_GET['url']) ? $_GET['url'] : 'login/login'; #Por default va a cargar el controlador:login y Modelo:login
+$url =  !empty($_GET['url']) ? $_GET['url'] : ''; #Por default va a cargar el controlador:login y Modelo:login
 $arrUrl = explode("/", $url);
 $controller = $arrUrl[0]; #Controlador
 $method = $arrUrl[0]; #Por default el metodo es el mismo que el controlador
