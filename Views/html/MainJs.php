@@ -32,7 +32,7 @@
  <?php
  
     $archivo_actual = $_SERVER['PHP_SELF'];  //Ruta 
-    if($archivo_actual == '/login.php'):
+    if($_GET['url'] == 'login.php'):
  ?>    
     <!-- particles js -->
     <script src="<?= base_url(); ?>public/lib/particles.js/particles.js"></script>
