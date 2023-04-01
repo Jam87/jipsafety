@@ -3,13 +3,13 @@
 <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
 <meta content="Themesbrand" name="author" />
 <!-- App favicon -->
-<link rel="shortcut icon" href="<?= base_url(); ?>/public/images/favicon.png">
+<link rel="shortcut icon" href="<?= base_url(); ?>public/images/favicon.png">
 
 <!-- jsvectormap css -->
-<link href="<?= base_url(); ?>/public/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url(); ?>public/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
 
 <!--Swiper slider css-->
-<link href="<?= base_url(); ?>/public/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url(); ?>public/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
 
 <!--datatable css-->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
@@ -19,18 +19,18 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
 
 <!-- Layout config Js -->
-<script src="<? base_url(); ?>/public/js/layout.js"></script>
+<script src="<? base_url(); ?>public/js/layout.js"></script>
 <!-- Bootstrap Css -->
-<link href="<?= base_url(); ?>/public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url(); ?>public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <!-- Icons Css -->
-<link href="<?= base_url(); ?>/public/css/icons.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url(); ?>public/css/icons.min.css" rel="stylesheet" type="text/css" />
 <!-- App Css-->
-<link href="<?= base_url(); ?>/public/css/app.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url(); ?>public/css/app.min.css" rel="stylesheet" type="text/css" />
 <!-- custom Css-->
-<link href="<?= base_url(); ?>/public/css/custom.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url(); ?>public/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 <link rel="stylesheet" href="sweetalert2.min.css">
 
 <!-- Mis estilos -->
-<link rel="stylesheet" href="<?= base_url(); ?>/public/css/main.css">
+<link rel="stylesheet" href="<?= base_url(); ?>public/css/main.css">
 
