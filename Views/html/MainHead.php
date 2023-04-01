@@ -29,8 +29,6 @@
 <!-- custom Css-->
 <link href="<?= base_url(); ?>public/css/custom.min.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="sweetalert2.min.css">
-
 <!-- Mis estilos -->
 <link rel="stylesheet" href="<?= base_url(); ?>public/css/main.css">
 
