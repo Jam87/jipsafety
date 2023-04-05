@@ -3,14 +3,14 @@ let tableFormaPago;
 document.addEventListener('DOMContentLoaded', function(){
 
   //*** MOSTRAR DATOS EN DATATABLE Y TRADUCCIÓN ***//
-	tableFormaPago = $('#table-formaPago').dataTable( {
+	tableFormaPago = $('#table-Pago').dataTable( {
 		"aProcessing":true,
 		"aServerSide":true,
         "language": {
         	"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax":{
-          "url": " " + base_url + "/FormaPago/getFormaPago",
+          "url": " " + base_url + "FormaPago/getFormaPago",
             "dataSrc":""
         },
         "columns":[

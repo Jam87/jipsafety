@@ -49,7 +49,7 @@ getModal('formapago', $data);
                                 </div>
                                 <div class="card-body">
                                     <!-- Tabla de Tipo de usuario -->
-                                    <table id="table-formaPago" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
+                                    <table id="table-Pago" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>Descripción</th>
