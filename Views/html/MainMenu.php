@@ -52,22 +52,23 @@
           </div>
         </li><!-- /Modulo: Clientes -->
 
-        <li class="nav-item"><!-- Modulo: Compras -->
-          <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarApps">
-            <i class="ri-apps-2-line"></i> <span data-key="t-apps">Compras</span>
+        <li class="nav-item">
+          <a class="nav-link menu-link" href="#sidebarIcons" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarIcons">
+            <i class="ri-compasses-2-line"></i> <span data-key="t-icons">Compras</span>
           </a>
-          <div class="collapse menu-dropdown" id="sidebarApps">
+          <div class="collapse menu-dropdown" id="sidebarIcons">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>proveedores" class="nav-link" data-key="t-calendar"> Proveedores </a>
+                <a href="<?= base_url(); ?>proveedores" class="nav-link" data-key="t-remix">Proveedores</a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>Compras" class="nav-link" data-key="t-calendar"> Compras </a>
+                <a href="<?= base_url(); ?>Compras" class="nav-link" data-key="t-boxicons">Compras</a>
+              </li>
+           
               </li>
             </ul>
           </div>
-        </li><!-- /Modulo: Compras -->
-
+        </li>
         <li class="nav-item">
           <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLayouts">
             <i class="ri-layout-3-line"></i> <span data-key="t-layouts">Ventas</span>
@@ -395,31 +396,7 @@
           </div>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link menu-link" href="#sidebarIcons" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarIcons">
-            <i class="ri-compasses-2-line"></i> <span data-key="t-icons">Icons</span>
-          </a>
-          <div class="collapse menu-dropdown" id="sidebarIcons">
-            <ul class="nav nav-sm flex-column">
-              <li class="nav-item">
-                <a href="icons-remix.html" class="nav-link" data-key="t-remix">Remix</a>
-              </li>
-              <li class="nav-item">
-                <a href="icons-boxicons.html" class="nav-link" data-key="t-boxicons">Boxicons</a>
-              </li>
-              <li class="nav-item">
-                <a href="icons-materialdesign.html" class="nav-link" data-key="t-material-design">Material Design</a>
-              </li>
-              <li class="nav-item">
-                <a href="icons-lineawesome.html" class="nav-link" data-key="t-line-awesome">Line
-                  Awesome</a>
-              </li>
-              <li class="nav-item">
-                <a href="icons-feather.html" class="nav-link" data-key="t-feather">Feather</a>
-              </li>
-            </ul>
-          </div>
-        </li>
+        
 
         <li class="nav-item">
           <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMaps">

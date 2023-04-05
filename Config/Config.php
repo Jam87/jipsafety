@@ -15,7 +15,7 @@
 ----------*/
 
 #URL development
-//const BASE_URL = "http://localhost/jipsafety";
+//const BASE_URL = "http://localhost/jipsafety/";
 
 #URL production
 const BASE_URL = "https://jip.grupopaniagua.com/";
