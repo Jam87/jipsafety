@@ -16,7 +16,7 @@ formLogin.addEventListener('submit', function(e){
 
               if(objData.status)
               {
-                window.location = base_url+'/dashboard';                      
+                window.location = base_url+'dashboard';                      
                 
               }else{
                //Modal exito Toast aviso parte superior
