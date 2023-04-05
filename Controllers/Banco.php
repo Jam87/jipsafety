@@ -44,9 +44,9 @@ class Banco extends Controllers
 
             #Localidad
             if ($arrData[$i]['es_local'] == 1) {
-                $arrData[$i]['es_local'] = '<img id="header-lang-img" src="<?= base_url(); ?>assets/images/flags/nic.svg" alt="Header Language" height="20" class="rounded"><span> Nacional</span>';
+                $arrData[$i]['es_local'] = '<img id="header-lang-img" src="https://jip.grupopaniagua.com/assets/images/flags/nic.svg" alt="Header Language" height="20" class="rounded"><span> Nacional</span>';
             } else {
-                $arrData[$i]['es_local'] = '<img id="header-lang-img" src="<?= base_url(); ?>assets/images/flags/int.svg" alt="Header Language" height="20" class="rounded"><span> Internacional</span>';
+                $arrData[$i]['es_local'] = '<img id="header-lang-img" src="https://jip.grupopaniagua.com/assets/images/flags/int.svg" alt="Header Language" height="20" class="rounded"><span> Internacional</span>';
             }
 
             #Estado

@@ -44,9 +44,9 @@ class FormaPago extends Controllers
 
             #Localidad
             if ($arrData[$i]['es_aplicado_ventas'] == 1) {
-                $arrData[$i]['es_aplicado_ventas'] = '<img id="header-lang-img" src="<?= base_url(); ?>assets/images/flags/success.svg" alt="Aplica" height="20" class="rounded"><span> Aplica</span>';
+                $arrData[$i]['es_aplicado_ventas'] = '<img id="header-lang-img" src="https://jip.grupopaniagua.com/assets/images/flags/success.svg" alt="Aplica" height="20" class="rounded"><span> Aplica</span>';
             } else {
-                $arrData[$i]['es_aplicado_ventas'] = '<img id="header-lang-img" src="<?= base_url(); ?>assets/images/flags/cancel.svg" alt="No aplica" height="20" class="rounded"><span> No aplica</span>';
+                $arrData[$i]['es_aplicado_ventas'] = '<img id="header-lang-img" src="https://jip.grupopaniagua.com/assets/images/flags/cancel.svg" alt="No aplica" height="20" class="rounded"><span> No aplica</span>';
             }
 
             #Estado
