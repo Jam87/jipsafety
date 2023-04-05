@@ -35,7 +35,7 @@ class Pagos extends Controllers
     }
 
     ### CONTROLADOR: MOSTRAR TODAS LAS FORMAS DE PAGOS ###
-    public function getPagos()
+    public function getForma()
     {
         #Cargo el modelo(selectBancos) 
         $arrData = $this->model->selectPagos();
