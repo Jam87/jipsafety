@@ -1,6 +1,6 @@
 <?php
 ### CLASE FORMA DE PAGO  ###
-class Pago extends Controllers
+class Pagos extends Controllers
 {
 
     public function __construct()
@@ -13,7 +13,7 @@ class Pago extends Controllers
     }
 
     ### CONTROLADOR ###
-    public function Pago()
+    public function Pagos()
     {
         $data['page_title'] = "Jipsafety | Forma de pago";
         $data['page_name'] = "Forma de pago";
