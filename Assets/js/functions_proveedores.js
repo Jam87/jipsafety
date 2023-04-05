@@ -1,20 +1,21 @@
-let tableBancos;
+let tableProveedor;
 
 document.addEventListener("DOMContentLoaded", function () {
   //*** MOSTRAR DATOS EN DATATABLE Y TRADUCCIÓN ***//
-  tableBancos = $("#table-bancos").dataTable({
+  tableProveedor = $("#table-proveedor").dataTable({
     aProcessing: true,
     aServerSide: true,
     language: {
       url: "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json",
     },
-    ajax: {
+    /*ajax: {
       url: " " + base_url + "/Banco/getBancos",
       dataSrc: "",
-    },
+    },*/
     columns: [
-      { data: "nombre_banco" },
-      { data: "es_local" },
+      { data: "Nombre" },
+      { data: "cuenta" },
+      { data: "contacto" },
       { data: "activo" },
       { data: "options" },
     ],
@@ -259,7 +260,7 @@ function fntEditBanco(idbanco) {
 }
 
 //*** HACER QUE EL DATATABLE FUNCIONES ***//
-$("#table-bancos").DataTable();
+$("#table-proveedor").DataTable();
 
 //*** MANDAR A LLAMAR AL MODAL: Agregar una nueva marca ***//
 function openModal() {
