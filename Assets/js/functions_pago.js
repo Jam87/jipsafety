@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
         	"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax":{
-          "url": " " + base_url + "FormaPago/getFormaPago",
+            "url": " " + base_url + "Pagos/getPagos",
             "dataSrc":""
         },
         "columns":[
@@ -197,7 +197,8 @@ document.addEventListener('DOMContentLoaded', function(){
       document.querySelector('#formPago').reset();
       
       var request = request =  new XMLHttpRequest();
-      var ajaxUrl = base_url+'/FormaPago/getPago/'+idpago;
+      
+      var ajaxUrl = base_url+'/Pago/getPago/'+idpago;
       request.open("GET",ajaxUrl,true);
       request.send();
 
