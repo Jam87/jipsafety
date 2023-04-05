@@ -1,6 +1,6 @@
 <?php
 ### CLASE FORMA DE PAGO  ###
-class FormaPago extends Controllers
+class Pago extends Controllers
 {
 
     public function __construct()
@@ -13,7 +13,7 @@ class FormaPago extends Controllers
     }
 
     ### CONTROLADOR ###
-    public function FormaPago()
+    public function Pago()
     {
         $data['page_title'] = "Jipsafety | Forma de pago";
         $data['page_name'] = "Forma de pago";
@@ -21,7 +21,7 @@ class FormaPago extends Controllers
         $data['breadcrumb-item'] = "Usuarios";
         $data['breadcrumb-activo'] = "Usuario";
 
-        $data['page_functions_js'] = "functions_forma_pago.js";
+        $data['page_functions_js'] = "functions_pago.js";
 
         #Data modal
         $data['page_title_modal'] = "Nuevo banco";
@@ -31,7 +31,7 @@ class FormaPago extends Controllers
         $data['data-sidebar-size'] = 'sm';
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
-        $this->views->getView($this, "formaPago", $data);
+        $this->views->getView($this, "Pago", $data);
     }
 
     ### CONTROLADOR: MOSTRAR TODAS LAS FORMAS DE PAGOS ###
