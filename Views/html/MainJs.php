@@ -29,17 +29,8 @@
  <script src="<?= base_url(); ?>public/lib/select2/js/select2.min.js"></script>
 
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
- <?php
- 
-    $archivo_actual = $_SERVER['PHP_SELF'];  //Ruta 
-    if($_GET['url'] == 'login.php'):
- ?>    
+  
    
-<?php 
- endif;
- ?>
-
-
 
  <!-- validation init -->
  <script src="<?= base_url(); ?>public/js/pages/form-validation.init.js"></script>
