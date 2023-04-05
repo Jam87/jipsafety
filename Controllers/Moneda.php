@@ -42,10 +42,10 @@ class Moneda extends Controllers
         for ($i = 0; $i < count($arrData); $i++) {
 
             #Localidad
-            if ($arrData[$i]['es_local'] == 1) {
-                $arrData[$i]['es_local'] = '<img src="https://jip.grupopaniagua.com/public/images/int.svg" alt="" height="70">';
+            if ($arrData[$i]['es_local'] == 1) {nic
+                $arrData[$i]['es_local'] = '<span">Nacional</span>';
             } else {
-                $arrData[$i]['es_local'] = '<img src="https://jip.grupopaniagua.com/public/images/flags/nic.svg" alt="" height="70">';
+                $arrData[$i]['es_local'] = '<span class="">Internacional</span>';
             }
 
             #Estado
