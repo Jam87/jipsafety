@@ -15,10 +15,10 @@
 ----------*/
 
 #URL development
-//const BASE_URL = "http://localhost/jipsafety/";
+const BASE_URL = "http://localhost/jipsafety/";
 
 #URL production
-const BASE_URL = "https://jip.grupopaniagua.com/";
+//const BASE_URL = "https://jip.grupopaniagua.com/";
 
 
 /*----------  
@@ -68,19 +68,19 @@ const COIN_SEPARATOR_DECIMAL = ".";
 #CONEXION
 
 #Production
-const DB_HOST = "82.180.174.103";
+/*const DB_HOST = "82.180.174.103";
 const DB_NAME = "u558030020_jipsafety";
 const DB_USER = "u558030020_jipsafety";
 const DB_PASSWORD = "1@XPv5P+";
-const DB_CHARSET = "charset=utf8";
+const DB_CHARSET = "charset=utf8";*/
 
 
 #Development
-/*const DB_HOST = "localhost";
+const DB_HOST = "localhost";
 const DB_NAME = "jipsafety";
 const DB_USER = "root";
 const DB_PASSWORD = "";
-const DB_CHARSET = "charset=utf8";*/
+const DB_CHARSET = "charset=utf8";
 
  #Zona horaria
  #date_default_timezone_set('America/Nicaragua');
