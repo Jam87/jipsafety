@@ -42,8 +42,8 @@ class Moneda extends Controllers
         for ($i = 0; $i < count($arrData); $i++) {
 
             #Localidad
-            if ($arrData[$i]['es_local'] == 1) {nic
-                $arrData[$i]['es_local'] = '<span">Nacional</span>';
+            if ($arrData[$i]['es_local'] == 1) {
+                $arrData[$i]['es_local'] = '<span class="">Nacional</span>';
             } else {
                 $arrData[$i]['es_local'] = '<span class="">Internacional</span>';
             }
