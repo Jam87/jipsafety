@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function(){
   
 
   //*** HACER QUE EL DATATABLE FUNCIONES ***//
-  $('#table-formaPago').DataTable();
+  $('#table-Pago').DataTable();
 
 
   //*** MANDAR A LLAMAR AL MODAL: Agregar una nueva marca ***//
