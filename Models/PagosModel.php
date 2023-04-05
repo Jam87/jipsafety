@@ -1,6 +1,6 @@
 <?php
  ### CLASE: Forma de pago Model ###
-class PagoModel extends Mysql
+class PagosModel extends Mysql
 {
     private $cod_forma_pago;
     private $descripcion;

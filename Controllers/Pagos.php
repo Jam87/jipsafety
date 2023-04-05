@@ -31,7 +31,7 @@ class Pagos extends Controllers
         $data['data-sidebar-size'] = 'sm';
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
-        $this->views->getView($this, "pago", $data);
+        $this->views->getView($this, "pagos", $data);
     }
 
     ### CONTROLADOR: MOSTRAR TODAS LAS FORMAS DE PAGOS ###
