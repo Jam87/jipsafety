@@ -18,14 +18,16 @@
 
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" /> <!-- 'classic' theme -->
+
 <!-- Bootstrap Css -->
-<link href="<?= base_url(); ?>public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<?= base_url(); ?>public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <!-- Icons Css -->
-<link href="<?= base_url(); ?>public/css/icons.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<?= base_url(); ?>public/css/icons.min.css" rel="stylesheet" type="text/css" />
 <!-- App Css-->
-<link href="<?= base_url(); ?>public/css/app.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<?= base_url(); ?>public/css/app.min.css" rel="stylesheet" type="text/css" />
 <!-- custom Css-->
-<link href="<?= base_url(); ?>public/css/custom.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<?= base_url(); ?>public/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 <!-- Mis estilos -->
 <link rel="stylesheet" href="<?= base_url(); ?>public/css/main.css">

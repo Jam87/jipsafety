@@ -16,7 +16,7 @@
                     <input type="hidden" id="idPago" name="idPago" value="">
                     <div class="mb-3">
                         <label for="Nombre" class="form-label">Descripción <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="txtName" name="txtName" placeholder="Escriba la forma de pago" required>
+                        <input type="text" class="form-control" id="txtName" name="txtName" placeholder="Escriba la forma de pago">
                     </div><!--Fin nombre-->
                     <div class="mb-3">
                         <label for="Description" class="form-label">Nota</label>
@@ -24,14 +24,14 @@
                     </div><!--Fin description-->
                     <div class="mb-3">
                         <label for="exampleSelect1">Aplica a la venta <span class="text-danger">*</span></label>
-                        <select class="form-select mb-3" id="listVenta" name="listVenta" required>
+                        <select class="form-select mb-3" id="listVenta" name="listVenta">
                             <option value="1">Aplicable</option>
                             <option value="2">No aplicable</option>
                         </select>
                     </div> <!--Fin Select-->
                     <div class="mb-3">
                         <label for="exampleSelect1">Estado <span class="text-danger">*</span></label>
-                        <select class="form-select mb-3" id="listStatus" name="listStatus" required>
+                        <select class="form-select mb-3" id="listStatus" name="listStatus">
                             <option value="1">Activo</option>
                             <option value="2">Inactivo</option>
                         </select>

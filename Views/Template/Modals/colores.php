@@ -18,11 +18,13 @@
                         <label for="Nombre" class="form-label">Descripción <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="txtName" name="txtName" placeholder="Escriba la descripción" required>
                     </div><!--Fin nombre-->
+                    
+                   
                     <div class="mb-3">
                         <label for="Nombre" class="form-label">Codigo html <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="txtColor" name="txtColor" placeholder="Escriba el color" required>
                     </div><!--Fin nombre-->
-                                       
+
                     <div class="mb-3">
                         <label for="exampleSelect1">Estado <span class="text-danger">*</span></label>
                         <select class="form-select mb-3" id="listStatus" name="listStatus" required>

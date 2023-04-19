@@ -3,11 +3,14 @@
      const base_url = "<?= base_url(); ?>";
  </script>
 
+
+
  <script src="<?= base_url(); ?>public/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
  <script src="<?= base_url(); ?>public/lib/simplebar/simplebar.min.js"></script>
  <script src="<?= base_url(); ?>public/lib/node-waves/waves.min.js"></script>
  <script src="<?= base_url(); ?>public/lib/feather-icons/feather.min.js"></script>
  <script src="<?= base_url(); ?>public/js/pages/plugins/lord-icon-2.1.0.js"></script>
+ <script src="<?= base_url(); ?>public/js/plugins.js"></script>
 
 
  <!-- apexcharts -->
@@ -29,8 +32,8 @@
  <script src="<?= base_url(); ?>public/lib/select2/js/select2.min.js"></script>
 
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
-   
+
+
 
  <!-- validation init -->
  <script src="<?= base_url(); ?>public/js/pages/form-validation.init.js"></script>
@@ -43,11 +46,20 @@
  <!-- choices.js  -->
  <script src="<?= base_url(); ?>public/lib/choices/public/assets/scripts/choices.min.js"></script>
 
-  <!--Invoice create init js-->
-  <script src="<?= base_url(); ?>public/js/pages/invoicecreate.init.js"></script>
+ <!--Invoice create init js-->
+ <script src="<?= base_url(); ?>public/js/pages/invoicecreate.init.js"></script>
 
+ <!-- Modern colorpicker bundle -->
+ <script src="<?= base_url(); ?>public/lib/@simonwep/pickr/pickr.min.js"></script>
+
+ <!-- form masks init -->
+ <script src="<?= base_url(); ?>public/js/pages/form-masks.init.js"></script>
+
+ <!-- init js -->
+ <script src="<?= base_url(); ?>public/js/pages/form-pickers.init.js"></script>
  <!-- App js -->
  <script src="<?= base_url(); ?>public/js/app.js"></script>
+
 
 
 

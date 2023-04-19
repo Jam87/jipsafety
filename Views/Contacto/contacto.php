@@ -1,10 +1,11 @@
 <?php
-  #Mando a llamar al modal
-  getModal('contacto', $data);
+#Mando a llamar al modal
+getModal('contacto', $data);
 ?>
 
 <!doctype html>
-<html lang="es" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="<?= $data['data-sidebar-size']; ?>" data-sidebar-image="none">
+
 <head>
     <title><?= $data['page_title']; ?></title>
     <?php MainHead($data); ?>
@@ -31,13 +32,13 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);"><?= $data['page_title']; ?></a></li>
-                                        <li class="breadcrumb-item active">Categoria</li>
+                                        <li class="breadcrumb-item active">contacto</li>
                                     </ol>
                                 </div>
 
                             </div>
                         </div>
-                        
+
 
                         <div class="col-lg-12">
                             <div class="card">
@@ -51,7 +52,7 @@
                                     <table id="table-contacto" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Descripción</th>
+                                            <th>Descripción</th>
                                                 <th>Teléfono</th>
                                                 <th>Correo</th>
                                                 <th>Url</th>
@@ -71,8 +72,8 @@
                 </div>
             </div>
 
-             <!-- FOOTER -->
-             <?php MainFooter($data); ?>
+            <!-- FOOTER -->
+            <?php MainFooter($data); ?>
         </div>
 
     </div>

@@ -1,6 +1,6 @@
 <?php
 #Mando a llamar al modal
-getModal('presentacion', $data);
+getModal('kardex', $data);
 ?>
 
 <!doctype html>
@@ -32,7 +32,7 @@ getModal('presentacion', $data);
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);"><?= $data['page_title']; ?></a></li>
-                                        <li class="breadcrumb-item active">presentación</li>
+                                        <li class="breadcrumb-item active">kardex</li>
                                     </ol>
                                 </div>
 
@@ -49,10 +49,17 @@ getModal('presentacion', $data);
                                 </div>
                                 <div class="card-body">
                                     <!-- Tabla de Tipo de usuario -->
-                                    <table id="table-presentacion" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
+                                    <table id="table-bancos" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Descripción</th>
+                                                <th>Color</th>
+                                                <th>Presentación</th>
+                                                <th>Talla</th>
+                                                <th>Consecutivo</th>
+                                                <th>Movimientos</th>
+                                                <th>Fecha documento</th>
+                                                <th>Existencia anterior</th>
+                                                <th>Existencia nueva</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>

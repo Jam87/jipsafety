@@ -32,7 +32,7 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);"><?= $data['page_title']; ?></a></li>
-                                        <li class="breadcrumb-item active">Categoria</li>
+                                        <li class="breadcrumb-item active">proveedores</li>
                                     </ol>
                                 </div>
 
@@ -60,7 +60,8 @@
                                                         <div class="card">
                                                             <div class="card-body">
 
-                                                                <form method="post" id="formUsuario" name="formUsuario">
+                                                                <form method="post" id="formProveedor" name="formProveedor">
+                                                                    <input type="hidden" id="idProveedor" name="idProveedor" value="">
 
                                                                     <!-- Nav tabs -->
                                                                     <ul class="nav nav-tabs nav-tabs-custom nav-success nav-justified mb-3" role="tablist">
@@ -85,9 +86,7 @@
                                                                     <div class="tab-content text-muted">
                                                                         <div class="tab-pane active" id="home1" role="tabpanel">
                                                                             <div class="d-flex">
-                                                                                <div class="flex-shrink-0">
-                                                                                    <i class="ri-checkbox-multiple-blank-fill text-success"></i>
-                                                                                </div>
+
                                                                                 <div class="flex-grow-1 ms-2">
 
                                                                                     <input type="hidden" id="idUsuario" name="idUsuario" value="">
@@ -100,7 +99,7 @@
                                                                                                         <label for="nombre">Nombre <span class="text-danger">*</span></label>
 
                                                                                                         <div class="formulario__grupo-input">
-                                                                                                            <input type="text" class="form-border" name="nombre" id="nombre" placeholder="Escriba el nombre" required>
+                                                                                                            <input type="text" class="form-border" name="nombre" id="nombre" placeholder="Escriba el nombre">
                                                                                                         </div>
 
                                                                                                     </div><!-- Fin: nombre -->
@@ -111,7 +110,7 @@
                                                                                                         <label for="nombre">Nombre impreso <span class="text-danger">*</span></label>
 
                                                                                                         <div class="formulario__grupo-input">
-                                                                                                            <input type="text" class="form-border" name="nprint" id="nprint" placeholder="Escriba el nombre impreso" required>
+                                                                                                            <input type="text" class="form-border" name="nprint" id="nprint" placeholder="Escriba el nombre impreso">
                                                                                                         </div>
                                                                                                     </div><!-- Fin: apellido -->
                                                                                                 </div>
@@ -138,7 +137,7 @@
                                                                                                         <label for="nombre">Persona de contacto <span class="text-danger">*</span></label>
 
                                                                                                         <div class="formulario__grupo-input">
-                                                                                                            <input type="text" class="form-border" name="ncontacto" id="ncontacto" placeholder="Escriba el nombre del contacto" required>
+                                                                                                            <input type="text" class="form-border" name="ncontacto" id="ncontacto" placeholder="Escriba el nombre del contacto">
                                                                                                         </div>
 
                                                                                                     </div><!-- Fin: nombre -->
@@ -178,7 +177,7 @@
                                                                                                     <div class="formulario__grupo" id="grupo__nombre">
                                                                                                         <label for="nombre">Estado <span class="text-danger">*</span></label>
 
-                                                                                                        <select class="form-select mb-3" id="lStatus" name="lStatus" required>
+                                                                                                        <select class="form-select mb-3" id="lStatus" name="lStatus">
                                                                                                             <option value="1">Activo</option>
                                                                                                             <option value="2">Inactivo</option>
                                                                                                         </select>
@@ -197,20 +196,18 @@
                                                                         </div>
                                                                         <div class="tab-pane" id="profile1" role="tabpanel">
                                                                             <div class="d-flex">
-                                                                                <div class="flex-shrink-0">
-                                                                                    <i class="ri-checkbox-multiple-blank-fill text-success"></i>
-                                                                                </div>
+
                                                                                 <div class="flex-grow-1 ms-2">
                                                                                     <!--GRUPO 1-->
                                                                                     <div class="form-group">
                                                                                         <div class="row">
 
-                                                                                        <br>
+                                                                                            <br>
                                                                                             <div class="col-sm-4">
                                                                                                 <div class="formulario__grupo" id="grupo__apellido">
                                                                                                     <div class="formulario__grupo" id="grupo__apellido">
                                                                                                         <label for="nombre">Banco <span class="text-danger">*</span></label>
-                                                                                                        <select class="form-select mb-3" id="comboxbanco" name="comboxbanco" required>
+                                                                                                        <select class="form-select mb-3" id="comboxbanco" name="comboxbanco">
 
                                                                                                         </select>
                                                                                                     </div><!-- Fin: password-->
@@ -222,8 +219,9 @@
                                                                                                     <label for="nombre"># Consecutivo <span class="text-danger">*</span></label>
 
                                                                                                     <div class="formulario__grupo-input">
-                                                                                                        <input type="number" class="form-border" name="consecutivo" id="consecutivo" placeholder="numero consecutivo" required>
+                                                                                                        <input type="number" class="form-border" name="consecutivo" id="consecutivo" placeholder="numero consecutivo">
                                                                                                     </div>
+
 
                                                                                                 </div><!-- Fin: nombre -->
                                                                                             </div>
@@ -231,7 +229,7 @@
                                                                                                 <div class="formulario__grupo" id="grupo__apellido">
                                                                                                     <div class="formulario__grupo" id="grupo__apellido">
                                                                                                         <label for="nombre">Moneda <span class="text-danger">*</span></label>
-                                                                                                        <select class="form-select mb-3" id="comboxpago" name="comboxpago">
+                                                                                                        <select class="form-select mb-3" id="comboxMoneda" name="comboxMoneda">
 
                                                                                                         </select>
                                                                                                     </div><!-- Fin: password-->
@@ -251,7 +249,7 @@
                                                                                                     <label for="nombre"># Cuenta <span class="text-danger">*</span></label>
 
                                                                                                     <div class="formulario__grupo-input">
-                                                                                                        <input type="text" class="form-border" name="ncuenta" id="ncuenta" placeholder="Escriba # cuenta" required>
+                                                                                                        <input type="text" class="form-border" name="ncuenta" id="ncuenta" placeholder="Escriba # cuenta">
                                                                                                     </div>
 
                                                                                                 </div><!-- Fin: nombre -->
@@ -261,7 +259,7 @@
                                                                                                     <label for="nombre">SWIFT <span class="text-danger">*</span></label>
 
                                                                                                     <div class="formulario__grupo-input">
-                                                                                                        <input type="text" class="form-border" name="swift" id="swift" placeholder="Escriba swift" required>
+                                                                                                        <input type="text" class="form-border" name="swift" id="swift" placeholder="Escriba swift">
                                                                                                     </div>
 
                                                                                                 </div><!-- Fin: nombre -->
@@ -273,13 +271,14 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+
+
+                                                                        <!--TAB #3-->
                                                                         <div class="tab-pane" id="messages1" role="tabpanel">
                                                                             <div class="d-flex">
-                                                                                <div class="flex-shrink-0">
-                                                                                    <i class="ri-checkbox-multiple-blank-fill text-success"></i>
-                                                                                </div>
+
                                                                                 <div class="flex-grow-1 ms-2">
-                                                                                    <!--GRUPO 2-->
+                                                                                    <!--GRUPO 2--
                                                                                     <div class="form-group">
                                                                                         <div class="row">
                                                                                             
@@ -290,9 +289,9 @@
                                                                                                         <select class="form-select mb-3" id="comboxcontacto" name="comboxcontacto" required>
 
                                                                                                         </select>
-                                                                                                    </div><!-- Fin: password-->
+                                                                                                    </div><!-- Fin: password--
 
-                                                                                                </div><!-- Fin: apellido -->
+                                                                                                </div><!-- Fin: apellido --
                                                                                             </div>
                                                                                             <div class="col-sm-4">
                                                                                                 <div class="formulario__grupo" id="grupo__nombre">
@@ -302,7 +301,7 @@
                                                                                                         <input type="text" class="form-border" name="valor" id="valor" placeholder="valor" required>
                                                                                                     </div>
 
-                                                                                                </div><!-- Fin: nombre -->
+                                                                                                </div><!-- Fin: nombre --
                                                                                              </div>
                                                                                              
                                                                                              <div class="col-sm-4">
@@ -313,7 +312,7 @@
                                                                                                         <input type="text" class="form-border" name="extension" id="extension" placeholder="Digite la extensión" required>
                                                                                                     </div>
 
-                                                                                                </div><!-- Fin: nombre -->
+                                                                                                </div><!-- Fin: nombre --
                                                                                              </div> 
 
 
@@ -325,11 +324,11 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                 
-                                                                        
+
+
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        
+
                                                                         <button type="submit" id="btnActionForm" name="action" value="add" class="btn btn-primary "><span id="btnText">Guardar</span></button>
                                                                     </div>
                                                                 </form>
@@ -355,9 +354,11 @@
                                     <table id="table-proveedor" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Nombre </th>
-                                                <th># Cuenta</th>
-                                                <th># Contacto</th>
+                                                <th>Nombre proveedor </th>
+                                                <th>Nombre impreso</th>
+                                                <th>Número ruc</th>
+                                                <th>Persona contacto</th>
+                                                <th>Forma de pago</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>
