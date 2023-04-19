@@ -14,7 +14,7 @@ class Compras extends Controllers
     ### CONTROLADOR ###
     public function Compras()
     {
-        $data['page_title'] = "Jipsafety | Compras";
+        $data['page_title'] = "Dashboard | Compras";
         $data['page_name'] = "Compras";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";

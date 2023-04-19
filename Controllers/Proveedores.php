@@ -15,7 +15,7 @@ class Proveedores extends Controllers
     ### CONTROLADOR ###
     public function Proveedores()
     {
-        $data['page_title'] = "Jipsafety | Proveedores";
+        $data['page_title'] = "Dashboard | Proveedores";
         $data['page_name'] = "Proveedores";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
@@ -34,20 +34,15 @@ class Proveedores extends Controllers
         $this->views->getView($this, "proveedores", $data);
     }
 
+
+
     ### CONTROLADOR: MOSTRAR TODOS LOS BANCOS ###
-    public function getBancos()
+    public function getProveedores()
     {
         #Cargo el modelo(selectBancos) 
-        $arrData = $this->model->selectBancos();
+        $arrData = $this->model->selectProveedores();
 
         for ($i = 0; $i < count($arrData); $i++) {
-
-            #Localidad
-            if ($arrData[$i]['es_local'] == 1) {
-                $arrData[$i]['es_local'] = '<img id="header-lang-img" src="assets/images/flags/nic.svg" alt="Header Language" height="20" class="rounded"><span> Nacional</span>';
-            } else {
-                $arrData[$i]['es_local'] = '<img id="header-lang-img" src="assets/images/flags/int.svg" alt="Header Language" height="20" class="rounded"><span> Internacional</span>';
-            }
 
             #Estado
             if ($arrData[$i]['activo'] == 1) {
@@ -58,59 +53,82 @@ class Proveedores extends Controllers
 
             #Botones de accion
             $arrData[$i]['options'] = '<div class="text-center">
-				<button type="button" class="btn btn-warning btn-sm btnEditBanco" onClick="fntEditBanco(' . $arrData[$i]['cod_bancos'] . ')" title="Editar"><i class="ri-edit-2-line"></i></button>
-				<button type="button" class="btn btn-danger btn-sm btnDelBanco" onClick="fntDelBanco(' . $arrData[$i]['cod_bancos'] . ')" title="Eliminar"><i class="ri-delete-bin-5-line"></i></button>
+				<button type="button" class="btn btn-warning btn-sm btnEditBanco" onClick="fntEditProv(' . $arrData[$i]['cod_proveedor'] . ')" title="Editar"><i class="ri-edit-2-line"></i></button>
+				<button type="button" class="btn btn-danger btn-sm btnDelBanco" onClick="fntDelProv(' . $arrData[$i]['cod_proveedor'] . ')" title="Eliminar"><i class="ri-delete-bin-5-line"></i></button>
 				</div>';
         }
 
 
         #JSON
         echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-        exit();
+        die();
     }
 
-    ### CONTROLADOR: GUARDAR NUEVO BANCO ###
-    public function setBanco()
+    ### CONTROLADOR: GUARDAR NUEVO PROVEEDOR ###
+    public function setProveedor()
     {
 
         if ($_POST) {
 
-            /*dep($_POST);
-            exit();*/
-
             #Capturo los datos
-            $intIdBanco = intval($_POST['idBanco']);
+            $intIdProveedor = intval($_POST['idProveedor']);
 
-            $name       = strClean($_POST['txtName']);
-            $nota       = strClean($_POST['txtDescription']);
-            $listLocal  = intval($_POST['listLocal']);
-            $status     = intval($_POST['listStatus']);
+            $nombre_proveedor  = strClean($_POST['nombre']);
+            $nombre_impreso    = strClean($_POST['nprint']);
+            $numero_ruc        = strClean($_POST['ruc']);
+            $cod_pais          = intval($_POST['comboxpais']);
+            $persona_contacto  = strClean($_POST['ncontacto']);
+            $cod_forma_pago    = intval($_POST['comboxpago']);
+            $activo            = intval($_POST['lStatus']);
+
+            //DATA BANCO 
+            $consecut          = strClean($_POST['consecutivo']);
+            $ncuenta           = strClean($_POST['ncuenta']);
+            $swift             = strClean($_POST['swift']);
+
+
 
             #Si no viene ningun ID - Estoy creando 1 nuevo
-            if ($intIdBanco == 0) {
+            if ($intIdProveedor == 0) {
 
                 #Crear
-                $request_Banco = $this->model->insertBanco($name, $nota, $listLocal, $status);
+                $request_Proveedor = $this->model->insertProveedor(
+                    $nombre_proveedor,
+                    $nombre_impreso,
+                    $numero_ruc,
+                    $cod_pais,
+                    $persona_contacto,
+                    $cod_forma_pago,
+                    $activo
+                );
 
-                /* dep($request_Tipo);
-                  exit();*/
+                $request_Banco = $this->model->insertBanco(
+                    $consecut,
+                    $ncuenta,
+                    $swift
+                );
+
+
+                /*dep($request_Proveedor);
+                exit();*/
+
 
                 $option = 1;
             } else {
                 #Actualizar
-                $request_Banco = $this->model->updateBanco($intIdBanco, $name, $nota, $listLocal, $status);
+                //$request_Proveedor = $this->model->updateBanco($intIdBanco, $name, $nota, $listLocal, $status);
                 $option = 2;
             }
 
             #Verificar
-            if ($request_Banco > 0) {
+            if ($request_Proveedor && $request_Banco > 0) {
                 if ($option == 1) {
                     $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
                 } else {
                     $arrResponse = array('status' => true, 'msg' => 'Datos actualizados correctamente.');
                 }
-            } else if ($request_Banco === 'existe') {
-                $arrResponse = array('status' => false, 'msg' => '¡Atención! El tipo de usuario ya existe.');
+            } else if ($request_Proveedor && $request_Banco === 'existe') {
+                $arrResponse = array('status' => false, 'msg' => '¡Atención! El proveedor ya existe.');
             } else {
                 $arrResponse = array('status' => true, 'msg' => 'No es posible almacenar los datos');
             }
@@ -122,7 +140,7 @@ class Proveedores extends Controllers
     }
 
     ### CONTROLADOR: ELIMINAR BANCO ###
-    public function delBanco()
+    /*public function delBanco()
     {
 
         if ($_POST) {
@@ -140,10 +158,10 @@ class Proveedores extends Controllers
 
             die();
         }
-    }
+    }*/
 
     ### CONTROLADOR: EDITAR BANCOS ###    
-    public function getBanco(int $idBanco)
+    /*public function getBanco(int $idBanco)
     {
 
         #id
@@ -159,5 +177,5 @@ class Proveedores extends Controllers
             echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
         }
         die();
-    }
+    }*/
 }

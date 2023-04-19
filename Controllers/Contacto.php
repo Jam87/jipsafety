@@ -15,7 +15,7 @@ class Contacto extends Controllers
     ### CONTROLADOR ###
     public function Contacto()
     {
-        $data['page_title'] = "Jipsafety | Contacto";
+        $data['page_title'] = "Dashboard | Contacto";
         $data['page_name'] = "Contacto";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
@@ -27,10 +27,21 @@ class Contacto extends Controllers
         $data['page_title_bold'] = "Estimado usuario";
         $data['descrption_modal1'] = "Los campos remarcados con";
         $data['descrption_modal2'] = "son necesarios.";
+        $data['data-sidebar-size'] = 'sm';
 
         #Cargo la vista(tipos). La vista esta en View - Contacto
         $this->views->getView($this, "contacto", $data);
     }
+
+    function mostrarContactos()
+    {
+        #Modelo comboxPais
+        $arrData = $this->model->comboxContacto();
+
+        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+        exit();
+    }
+
 
     ### CONTROLADOR: MOSTRAR TODOS CONTACTO ###
     public function getContacto()
@@ -45,6 +56,27 @@ class Contacto extends Controllers
                 $arrData[$i]['activo'] = '<span class="badge rounded-pill bg-success">Activo</span>';
             } else {
                 $arrData[$i]['activo'] = '<span class="badge rounded-pill bg-danger">Inactivo</span>';
+            }
+
+               #Telefono
+               if ($arrData[$i]['es_telefono'] == 1) {
+                $arrData[$i]['es_telefono'] = 'Si';
+            } else {
+                $arrData[$i]['es_telefono'] = 'No';
+            }
+
+             #Correo
+             if ($arrData[$i]['es_correo'] == 1) {
+                $arrData[$i]['es_correo'] = 'Si';
+            } else {
+                $arrData[$i]['es_correo'] = 'No';
+            }
+
+             #Url
+             if ($arrData[$i]['es_url'] == 1) {
+                $arrData[$i]['es_url'] = 'Si';
+            } else {
+                $arrData[$i]['es_url'] = 'No';
             }
 
             #Botones de accion
@@ -72,25 +104,25 @@ class Contacto extends Controllers
             #Capturo los datos
             $intIdContacto = intval($_POST['idContacto']);
 
-            $descripcion = strClean($_POST['descripcion']);
-            $telefono    = strClean($_POST['telefono']);
-            $correo      = strClean($_POST['correo']); 
-            $web         = strClean($_POST['web']); 
-            $status      = intval($_POST['lStatus']);
+            $descripcion   = strClean($_POST['comboxContact']);
+            $telefono      = strClean($_POST['listTel']);
+            $correo        = intval($_POST['listEmail']);
+            $url           = intval($_POST['listUrl']);
+            $status        = intval($_POST['listStatus']);
 
             #Si no viene ningun ID - Estoy creando 1 nuevo
             if ($intIdContacto == 0) {
-                
+
                 #Crear
-                $request_Contacto = $this->model->insertContacto($descripcion, $telefono, $correo, $web, $status);
-               
-               /* dep($request_Tipo);
+                $request_Contacto = $this->model->insertContacto($descripcion, $telefono, $correo, $url, $status);
+
+                /*dep($request_Tipo);
                   exit();*/
 
                 $option = 1;
             } else {
                 #Actualizar
-                $request_Contacto = $this->model->updateContacto($intIdContacto, $descripcion, $telefono, $correo, $web, $status);
+                $request_Banco = $this->model->updateBanco($intIdContacto, $name, $nota, $listLocal, $status);
                 $option = 2;
             }
 

@@ -15,7 +15,7 @@ class Pais extends Controllers
     ### CONTROLADOR ###
     public function Pais()
     {
-        $data['page_title'] = "Jipsafety | Pais";
+        $data['page_title'] = "Dashboard | Pais";
         $data['page_name'] = "Pais";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
@@ -34,6 +34,16 @@ class Pais extends Controllers
     }
 
     ### CONTROLADOR: MOSTRAR TODOS LOS PAISES ###
+    function mostrarPais()
+    {
+        #Modelo comboxPais
+        $arrData = $this->model->comboxPais();
+
+        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+        exit();
+    }
+
+
     public function getPais()
     {
         #Cargo el modelo(selectBancos) 
@@ -107,7 +117,7 @@ class Pais extends Controllers
                     $arrResponse = array('status' => true, 'msg' => 'Datos actualizados correctamente.');
                 }
             } else if ($request_Pais === 'existe') {
-                $arrResponse = array('status' => false, 'msg' => '¡Atención! El tipo de usuario ya existe.');
+                $arrResponse = array('status' => false, 'msg' => '¡Atención! El banco ya existe.');
             } else {
                 $arrResponse = array('status' => true, 'msg' => 'No es posible almacenar los datos');
             }

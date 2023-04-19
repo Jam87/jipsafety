@@ -1,6 +1,6 @@
 <?php
-### CLASE MONEDA  ###
-class Moneda extends Controllers
+### CLASE FORMA DE PAGO  ###
+class Pago extends Controllers
 {
 
     public function __construct()
@@ -13,49 +13,40 @@ class Moneda extends Controllers
     }
 
     ### CONTROLADOR ###
-    public function Moneda()
+    public function Pago()
     {
-        $data['page_title'] = "Dashboard | Moneda";
-        $data['page_name'] = "Moneda";
+        $data['page_title'] = "Dashboard | Forma de pago";
+        $data['page_name'] = "Forma de pago";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
         $data['breadcrumb-activo'] = "Usuario";
-        $data['page_functions_js'] = "functions_moneda.js";
+
+        $data['page_functions_js'] = "functions_pagos.js";
 
         #Data modal
-        $data['page_title_modal'] = "Nueva moneda";
+        $data['page_title_modal'] = "Nuevo banco";
         $data['page_title_bold'] = "Estimado usuario";
         $data['descrption_modal1'] = "Los campos remarcados con";
         $data['descrption_modal2'] = "son necesarios.";
         $data['data-sidebar-size'] = 'sm';
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
-        $this->views->getView($this, "moneda", $data);
+        $this->views->getView($this, "pago", $data);
     }
 
-    ### CONTROLADOR: MOSTRAR TODAS LAS MONEDAS ###
-    function mostrarMoneda()
-    {
-        #Modelo comboxBanco
-        $arrData = $this->model->comboxMoneda();
-
-        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-        exit();
-    }
-
-    ### CONTROLADOR: MOSTRAR TODAS LAS MONEDAS ###
-    public function getMoneda()
+    ### CONTROLADOR: MOSTRAR TODAS LAS FORMAS DE PAGOS ###
+    public function getPagos()
     {
         #Cargo el modelo(selectBancos) 
-        $arrData = $this->model->selectMoneda();
+        $arrData = $this->model->selectPagos();
 
         for ($i = 0; $i < count($arrData); $i++) {
 
             #Localidad
-            if ($arrData[$i]['es_local'] == 1) {
-                $arrData[$i]['es_local'] = '<span class="">Nacional</span>';
+            if ($arrData[$i]['es_aplicado_ventas'] == 1) {
+                $arrData[$i]['es_aplicado_ventas'] = '<span> Aplica</span>';
             } else {
-                $arrData[$i]['es_local'] = '<span class="">Internacional</span>';
+                $arrData[$i]['es_aplicado_ventas'] = '<span> No aplica</span>';
             }
 
             #Estado
@@ -67,19 +58,29 @@ class Moneda extends Controllers
 
             #Botones de accion
             $arrData[$i]['options'] = '<div class="text-center">
-				<button type="button" class="btn btn-warning btn-sm btnEditBanco" onClick="fntEditMoneda(' . $arrData[$i]['cod_moneda'] . ')" title="Editar"><i class="ri-edit-2-line"></i></button>
-				<button type="button" class="btn btn-danger btn-sm btnDelBanco" onClick="fntDelMoneda(' . $arrData[$i]['cod_moneda'] . ')" title="Eliminar"><i class="ri-delete-bin-5-line"></i></button>
+				<button type="button" class="btn btn-warning btn-sm btnEditBanco" onClick="fntEditPago(' . $arrData[$i]['cod_forma_pago'] . ')" title="Editar"><i class="ri-edit-2-line"></i></button>
+				<button type="button" class="btn btn-danger btn-sm btnDelBanco" onClick="fntDelPago(' . $arrData[$i]['cod_forma_pago'] . ')" title="Eliminar"><i class="ri-delete-bin-5-line"></i></button>
 				</div>';
         }
-
 
         #JSON
         echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
         exit();
     }
 
-    ### CONTROLADOR: GUARDAR NUEVA MONEDA ###
-    public function setMoneda()
+    ### CONTROLADOR: MOSTRAR FORMA DE PAGO ###
+    function mostrarPago()
+    {
+        #Modelo comboxPais
+        $arrData = $this->model->comboxPagos();
+
+        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+        exit();
+    }
+
+
+    ### CONTROLADOR: GUARDAR NUEVA FORMA DE PAGO ###
+    public function setPago()
     {
 
         if ($_POST) {
@@ -88,37 +89,37 @@ class Moneda extends Controllers
             exit();*/
 
             #Capturo los datos
-            $intIdMoneda = intval($_POST['idMoneda']);
-            $nombre      = strClean($_POST['txtName']);
-            $listLocal   = intval($_POST['listLocal']);
+            $intIdPago = intval($_POST['idPago']);
+
+            $descripcion = strClean($_POST['txtName']);
+            $nota        = strClean($_POST['txtDescription']);
+            $listVenta   = intval($_POST['listVenta']);
             $status      = intval($_POST['listStatus']);
 
-
             #Si no viene ningun ID - Estoy creando 1 nuevo
-            if ($intIdMoneda == 0) {
-
-                #Crear
-                $request_Moneda = $this->model->insertMoneda($nombre, $listLocal, $status);
-
-                /* dep($request_Tipo);
-                  exit();*/
+            if ($intIdPago == 0) {
 
                 $option = 1;
+                #Crear
+                $request_Pago = $this->model->insertPago($descripcion, $nota, $listVenta, $status);
+
+                /* dep($request_Pago);
+                exit();*/
             } else {
                 #Actualizar
-                $request_Moneda = $this->model->updateMoneda($intIdMoneda, $nombre, $listLocal, $status);
                 $option = 2;
+                $request_Pago = $this->model->updatePago($intIdPago, $descripcion, $nota, $listVenta, $status);
             }
 
             #Verificar
-            if ($request_Moneda > 0) {
+            if ($request_Pago >= 0) {
                 if ($option == 1) {
                     $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
                 } else {
                     $arrResponse = array('status' => true, 'msg' => 'Datos actualizados correctamente.');
                 }
-            } else if ($request_Moneda === 'existe') {
-                $arrResponse = array('status' => false, 'msg' => '¡Atención! El tipo de usuario ya existe.');
+            } else if ($request_Pago === 'existe') {
+                $arrResponse = array('status' => false, 'msg' => '¡Atención! El tipo de pago ya existe.');
             } else {
                 $arrResponse = array('status' => true, 'msg' => 'No es posible almacenar los datos');
             }
@@ -129,19 +130,20 @@ class Moneda extends Controllers
         die();
     }
 
-    ### CONTROLADOR: ELIMINAR MONEDA ###
-    public function delMoneda()
+    ### CONTROLADOR: ELIMINAR FORMA DE PAGO ###
+    public function delPago()
     {
+
         if ($_POST) {
 
-            $intIdMoneda = intval($_POST['cod_moneda']);
+            $intIdPago = intval($_POST['cod_pago']);
 
-            $requestDelete = $this->model->deleteMoneda($intIdMoneda);
+            $requestDelete = $this->model->deletePago($intIdPago);
 
             if ($requestDelete) {
-                $arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la moneda');
+                $arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la forma de pago');
             } else {
-                $arrResponse = array('status' => false, 'msg' => 'Error al eliminar la moneda.');
+                $arrResponse = array('status' => false, 'msg' => 'Error al eliminar la forma de pago.');
             }
             echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 
@@ -149,15 +151,15 @@ class Moneda extends Controllers
         }
     }
 
-    ### CONTROLADOR: EDITAR MONEDA ###    
-    public function EditMoneda(int $idMoneda)
+    ### CONTROLADOR: EDITAR FORMA DE PAGO ###    
+    public function getPago(int $idPago)
     {
+
         #id
-        $intIdMoneda = intval($idMoneda);
+        $intIdPago = intval($idPago);
 
-        if ($intIdMoneda > 0) {
-            $arrData = $this->model->editMoneda($intIdMoneda);
-
+        if ($intIdPago  > 0) {
+            $arrData = $this->model->editPago($intIdPago);
             if (empty($arrData)) {
                 $arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
             } else {

@@ -15,7 +15,7 @@ class Banco extends Controllers
     ### CONTROLADOR ###
     public function Banco()
     {
-        $data['page_title'] = "Jipsafety | Bancos";
+        $data['page_title'] = "Dashboard | Bancos";
         $data['page_name'] = "Bancos";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
@@ -35,13 +35,24 @@ class Banco extends Controllers
     }
 
     ### CONTROLADOR: MOSTRAR TODOS LOS BANCOS ###
+    function mostrarBanco()
+    {
+        #Modelo comboxBanco
+        $arrData = $this->model->comboxBanco();
+
+        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+        exit();
+    }
+
+
+    ### CONTROLADOR: MOSTRAR TODOS LOS BANCOS ###
     public function getBancos()
     {
         #Cargo el modelo(selectBancos) 
         $arrData = $this->model->selectBancos();
 
         for ($i = 0; $i < count($arrData); $i++) {
-
+                  
             #Localidad
             if ($arrData[$i]['es_local'] == 1) {
                 $arrData[$i]['es_local'] = '<img id="header-lang-img" src="https://jip.grupopaniagua.com/assets/images/flags/nic.svg" alt="Header Language" height="20" class="rounded"><span> Nacional</span>';

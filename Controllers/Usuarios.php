@@ -15,7 +15,7 @@ class Usuarios extends Controllers
     ### CONTROLADOR: CARGAR VISTA Y DATA ###
     public function Usuarios()
     {
-        $data['page_title'] = "Jipsafety | Categoria";
+        $data['page_title'] = "Dashboard | Usuario";
         $data['page_name'] = "Usuarios";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";

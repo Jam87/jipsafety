@@ -15,7 +15,7 @@ class Presentacion extends Controllers
     ### CONTROLADOR ###
     public function Presentacion()
     {
-        $data['page_title'] = "Jipsafety | Presentación";
+        $data['page_title'] = "Dashboard | Presentación";
         $data['page_name'] = "Presentación";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
@@ -32,6 +32,16 @@ class Presentacion extends Controllers
         #Cargo la vista(tipos). La vista esta en View - Tipos
         $this->views->getView($this, "presentacion", $data);
     }
+
+     ### CONTROLADOR: MOSTRAR PRESENTACION ###
+     function mostrarPresentacion()
+     {
+         #Modelo comboxPais
+         $arrData = $this->model->selectPresentacion();
+ 
+         echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+         exit();
+     }
 
     ### CONTROLADOR: MOSTRAR TODOS LAS PRESENTACIONES ###
     public function getPresentacion()

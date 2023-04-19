@@ -15,7 +15,7 @@ class Colores extends Controllers
     ### CONTROLADOR ###
     public function Colores()
     {
-        $data['page_title'] = "Jipsafety | Colores";
+        $data['page_title'] = "Dashboard | Colores";
         $data['page_name'] = "Colores";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
@@ -33,6 +33,19 @@ class Colores extends Controllers
         #Cargo la vista(tipos). La vista esta en View - Tipos
         $this->views->getView($this, "colores", $data);
     }
+
+
+    
+    ### CONTROLADOR: MOSTRAR TODOS LOS COLORES ###
+    function mostrarColor()
+    {
+        #Modelo comboxPais
+        $arrData = $this->model->selectColores();
+
+        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+        exit();
+    }
+
 
     ### CONTROLADOR: MOSTRAR TODOS LOS COLORES ###
     public function getColores()

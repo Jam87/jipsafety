@@ -15,7 +15,7 @@ class Tipos extends Controllers
     ### CONTROLADOR ###
     public function Tipos()
     {
-        $data['page_title'] = "Jipsafety | Categoria";
+        $data['page_title'] = "Dashboard | Usuario";
         $data['page_name'] = "Tipo de usuarios";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
