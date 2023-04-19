@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       url: "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json",
     },
     ajax: {
-      url: " " + base_url + "/Banco/getBancos",
+      url: " " + base_url + "Banco/getBancos",
       dataSrc: "",
     },
     columns: [
@@ -55,7 +55,7 @@ formBanco.addEventListener("submit", function (e) {
   }
 
   let request = new XMLHttpRequest();
-  let ajaxUrl = base_url + "/Bancos/setBanco";
+  let ajaxUrl = base_url + "Banco/setBanco";
   let formDta = new FormData(formBanco);
   request.open("POST", ajaxUrl, true);
   request.send(formDta);
@@ -115,7 +115,7 @@ function fntDelBanco(idbanco) {
   }).then((result) => {
     if (result.isConfirmed) {
       let request = new XMLHttpRequest();
-      let ajaxUrl = base_url + "/Banco/delBanco";
+      let ajaxUrl = base_url + "Banco/delBanco";
       let strData = "cod_bancos=" + idbanco;
 
       request.open("POST", ajaxUrl, true);
@@ -191,7 +191,7 @@ function fntEditBanco(idbanco) {
   document.querySelector("#formBanco").reset();
 
   var request = (request = new XMLHttpRequest());
-  var ajaxUrl = base_url + "/Banco/getBanco/" + idbanco;
+  var ajaxUrl = base_url + "Banco/getBanco/" + idbanco;
   request.open("GET", ajaxUrl, true);
   request.send();
 

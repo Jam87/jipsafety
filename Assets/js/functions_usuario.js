@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       url: "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json",
     },
     ajax: {
-      url: " " + base_url + "/Usuarios/getUsuarios",
+      url: " " + base_url + "Usuarios/getUsuarios",
       dataSrc: "",
     },
     columns: [
@@ -34,7 +34,7 @@ let comboxTusario = document.querySelector("#Tusuario");
 function cargarTUsuario() {
   $.ajax({
     type: "GET",
-    url: base_url + "/Usuarios/obtenerTipoUsuario",
+    url: base_url + "Usuarios/obtenerTipoUsuario",
     success: function (response) {
       //departamentos:Tengo el resultado en objeto
       const tipoUsuario = JSON.parse(response);
@@ -97,7 +97,7 @@ formUsuario.addEventListener("submit", function (e) {
   }
 
   let request = new XMLHttpRequest();
-  let ajaxUrl = base_url + "/Usuarios/setUsuarios";
+  let ajaxUrl = base_url + "Usuarios/setUsuarios";
   let formDta = new FormData(formUsuario);
   request.open("POST", ajaxUrl, true);
   request.send(formDta);
@@ -155,7 +155,7 @@ function fntDelUsuario(idusuario) {
   }).then((result) => {
     if (result.isConfirmed) {
       let request = new XMLHttpRequest();
-      let ajaxUrl = base_url + "/Usuarios/delUsuario";
+      let ajaxUrl = base_url + "Usuarios/delUsuario";
       let strData = "cod_usuario=" + idusuario;
 
       request.open("POST", ajaxUrl, true);
@@ -191,7 +191,7 @@ function fntDelUsuario(idusuario) {
             });
           } else {
             //Modal error Toast aviso parte superior
-            
+
             Swal.fire({
               position: "top-end",
               toast: "true",
@@ -238,7 +238,7 @@ function fntEditUsuario(idUsuario) {
   document.querySelector("#formUsuario").reset();
 
   var request = (request = new XMLHttpRequest());
-  var ajaxUrl = base_url + "/Usuarios/getUsuario/" + idUsuario;
+  var ajaxUrl = base_url + "Usuarios/getUsuario/" + idUsuario;
   request.open("GET", ajaxUrl, true);
   request.send();
 
