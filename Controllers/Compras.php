@@ -14,15 +14,24 @@ class Compras extends Controllers
     ### CONTROLADOR ###
     public function Compras()
     {
-        $data['page_title'] = "Dashboard | Compras";
+        $data['page_title'] = "Jipsafety | Compras";
         $data['page_name'] = "Compras";
         $data['description'] = "";
         $data['breadcrumb-item'] = "Usuarios";
         $data['breadcrumb-activo'] = "Usuario";
-        $data['data-sidebar-size'] = "sm";
         #$data['page_functions_js'] = "functions_bancos.js";
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
         $this->views->getView($this, "compras", $data);
+    }
+	
+    function obtenerProveedores()
+    {
+
+        #Modelo lostProveedores
+        $arrData = $this->model->lostProveedores();
+
+        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+        exit();
     }
 }
