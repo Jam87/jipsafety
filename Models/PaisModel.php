@@ -1,5 +1,5 @@
 <?php
- ### CLASE: PaisModel ###
+### CLASE: PaisModel ###
 class PaisModel extends Mysql
 {
     private $cod_pais;
@@ -13,6 +13,16 @@ class PaisModel extends Mysql
     {
         parent::__construct();
     }
+
+    ### COMBOX: MOSTRAR TODOS LOS PAISES ###
+    public function comboxPais()
+    {
+        $sql = "SELECT cod_pais,descripcion FROM cat_pais";
+
+        $request = $this->select_all($sql);
+        return $request;
+    }
+
 
     ### MODELO: MOSTRAR TODOS LOS PAISES ###
     public function selectPais()
@@ -36,9 +46,9 @@ class PaisModel extends Mysql
 
         #Sentencia
         $sql = "SELECT * FROM cat_pais WHERE descripcion = '{$this->descripcion}' ";
-        
+
         #Mando a llamar la función(select_all)
-        $request = $this->select_all($sql);        
+        $request = $this->select_all($sql);
 
         /*var_dump($request);
           exit();*/
@@ -80,11 +90,12 @@ class PaisModel extends Mysql
         }
         return $request;
     }
- 
+
 
     ### MODELO: EDITAR PAIS ###
-    public function editPais(int $idPais){
-        
+    public function editPais(int $idPais)
+    {
+
         //Buscar Pais
         $this->cod_pais = $idPais;
         $sql = "SELECT * FROM cat_pais WHERE cod_pais = '{$this->cod_pais}'";
@@ -92,9 +103,10 @@ class PaisModel extends Mysql
         return $request;
     }
 
-   
+
     ### MODELO: ACTUALIZAR PAIS ###
-    public function updatePais(int $intIdPais, string $descripcion, $listLocal, int $status){
+    public function updatePais(int $intIdPais, string $descripcion, $listLocal, int $status)
+    {
 
         #Recojo Data
         $this->cod_pais   = $intIdPais;
@@ -107,15 +119,13 @@ class PaisModel extends Mysql
         $sql = "SELECT * FROM cat_pais WHERE descripcion = '$this->descripcion' AND cod_pais != $this->cod_pais";
         $request = $this->select_all($sql);
 
-        if(empty($request))
-        {
+        if (empty($request)) {
             $sql = "UPDATE cat_pais SET descripcion = ?, es_local = ?, date_registro = ?, activo = ? WHERE cod_pais = $this->cod_pais";
             $arrData = array($this->descripcion, $this->es_local, $this->date_registro, $this->activo);
-            $request = $this->update($sql,$arrData);
-        }else{
+            $request = $this->update($sql, $arrData);
+        } else {
             $request = "exist";
         }
-        return $request;			
+        return $request;
     }
-   
 }

@@ -1,5 +1,5 @@
 <?php
- ### CLASE: CONTACTO MODEL ###
+### CLASE: CONTACTO MODEL ###
 class ContactoModel extends Mysql
 {
     private $cod_contacto;
@@ -15,6 +15,15 @@ class ContactoModel extends Mysql
         parent::__construct();
     }
 
+    public function comboxContacto()
+    {
+        $sql = "SELECT cod_contacto,descripcion FROM cat_contacto";
+
+        $request = $this->select_all($sql);
+        return $request;
+    }
+
+
     ### MODELO: MOSTRAR TODOS LOS CONTACTO ###
     public function selectContacto()
     {
@@ -27,40 +36,30 @@ class ContactoModel extends Mysql
     }
 
     ### MODELO: GUARDAR UN NUEVO CONTACTO###
-    public function insertContacto(string $descripcion, int $telefono, string $correo, string $web, int $status)
+    public function insertContacto(string $descripcion, int $telefono, int $correo, int $url, int $status)
     {
         $return = "";
         $this->descripcion    = $descripcion;
         $this->es_telefono    = $telefono;
         $this->es_correo      = $correo;
-        $this->es_url         = $web;
+        $this->es_url         = $url;
         $this->date_registro  = gmdate('Y-m-d H');
         $this->activo         = $status;
 
-        #Sentencia
-        $sql = "SELECT * FROM cat_contacto WHERE es_correo = '{$this->es_correo}' ";
-        
-        #Mando a llamar la función(select_all)
-        $request = $this->select_all($sql);        
+      
+        $sql = "INSERT INTO cat_contacto(descripcion, es_telefono, es_correo, es_url, date_registro, activo) 
+                VALUE (?,?,?,?,?,?)";
 
-        /*var_dump($request);
-          exit();*/
+        #arrData: array de información
+        $arrData = array($this->descripcion, $this->es_telefono, $this->es_correo, $this->es_url, $this->date_registro, $this->activo);
 
-        if (empty($request)) {
+        /*var_dump($arrData);
+        exit();*/
 
-            $sql = "INSERT INTO cat_contacto(descripcion, es_telefono, es_correo, es_url, date_registro, activo) VALUE (?,?,?,?,?,?)";
+        #Envio a la funcion insert(sentencia y data)
+        $return = $this->insert($sql, $arrData);
 
-            #arrData: array de información
-            $arrData = array($this->descripcion, $this->es_telefono, $this->es_correo, $this->es_url, $this->date_registro, $this->activo);
-
-            #Envio a la funcion insert(sentencia y data)
-            $requestInsert = $this->insert($sql, $arrData);
-
-            return $requestInsert;
-        } else {
-            $return = "existe";
-        }
-        return $return;
+        return $return;    
     }
 
 
@@ -83,11 +82,12 @@ class ContactoModel extends Mysql
         }
         return $request;
     }
- 
+
 
     ### MODELO: EDITAR FORMA DE CONTACTO ###
-    public function editContacto(int $intIdContacto){
-        
+    public function editContacto(int $intIdContacto)
+    {
+
         //Buscar forma de pago
         $this->cod_contacto = $intIdContacto;
         $sql = "SELECT * FROM cat_contacto WHERE cod_contacto  = {$this->cod_contacto}";
@@ -95,9 +95,10 @@ class ContactoModel extends Mysql
         return $request;
     }
 
-   
+
     ### MODELO: ACTUALIZAR CONTACTO ###
-    public function updateContacto($intIdContacto, $descripcion, $telefono, $correo, $web, $status){
+    public function updateContacto($intIdContacto, $descripcion, $telefono, $correo, $web, $status)
+    {
 
         $this->cod_contacto       = $intIdContacto;
         $this->descripcion        = $descripcion;
@@ -111,15 +112,13 @@ class ContactoModel extends Mysql
         $sql = "SELECT * FROM cat_contacto WHERE descripcion = '$this->descripcion' AND cod_contacto != $this->cod_contacto";
         $request = $this->select_all($sql);
 
-        if(empty($request))
-        {
+        if (empty($request)) {
             $sql = "UPDATE cat_contacto SET descripcion = ?, es_telefono = ?, es_correo = ?, es_url = ?, date_registro = ?, activo = ? WHERE cod_contacto   = {$this->cod_contacto}";
             $arrData = array($this->descripcion, $this->es_telefono, $this->es_correo, $this->es_url, $this->date_registro, $this->activo);
-            $request = $this->update($sql,$arrData);
-        }else{
+            $request = $this->update($sql, $arrData);
+        } else {
             $request = "exist";
         }
-        return $request;			
+        return $request;
     }
-   
 }

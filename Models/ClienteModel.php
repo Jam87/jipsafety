@@ -1,11 +1,14 @@
 <?php
-### CLASE: BancosModel ###
-class BancoModel extends Mysql
+### CLASE: ClientesModel ###
+class ClienteModel extends Mysql
 {
-    private $cod_bancos;
-    private $nombre_banco;
-    private $nota_banco;
-    private $es_local;
+    private $cod_cliente;
+    private $nombre_cliente;
+    private $numero_ruc;
+    private $cod_pais;
+    private $persona_contacto;
+    private $exento_impuesto;
+    private $cod_forma_pago;
     private $date_registro;
     private $activo;
 
@@ -14,60 +17,60 @@ class BancoModel extends Mysql
         parent::__construct();
     }
 
-    ### COMBOX: MOSTRAR TODOS LOS BANCOS ###
-    public function comboxBanco()
-    {
-        $sql = "SELECT cod_bancos, nombre_banco FROM cat_bancos";
-
-        $request = $this->select_all($sql);
-        return $request;
-    }
-
-
-    ### MODELO: MOSTRAR TODOS LOS BANCOS ###
-    public function selectBancos()
+    ### MODELO: MOSTRAR TODOS LOS CLIENTES ###
+    public function selectClientes()
     {
         #Sentencia
-        $sql = "SELECT * FROM  cat_bancos WHERE activo != 0";
+        $sql = "SELECT c.cod_cliente , c.nombre_cliente, c.numero_ruc, c.persona_contacto, p.descripcion, c.exento_impuesto, c.activo 
+                FROM bill_clientes c
+                INNER JOIN cat_forma_pago p
+                ON c.cod_forma_pago = p.cod_forma_pago 
+                WHERE c.activo != 0";
 
         #Mando a llamar la función(select_all)
         $request = $this->select_all($sql);
         return $request;
     }
 
-    ### MODELO: GUARDAR UN NUEVO TIPO DE USUARIO ###
-    public function insertBanco(string $name, string $nota, int $listLocal, int $status)
+    ### MODELO: GUARDAR UN NUEVO CLIENTE ###
+    public function insertCliente(string $nombre, string $ruc, int $comboxPais, string $personaContacto, int $comboxPago, int $statusImpuesto, int $lStatus)
     {
         $return = "";
-        $this->nombre_banco = $name;
-        $this->nota_banco   = $nota;
-        $this->es_local     = $listLocal;
-        $this->date_registro = date("yyyy-mm-dd");
-        $this->activo       = $status;
+     
+        $this->nombre_cliente   = $nombre;
+        $this->numero_ruc       = $ruc;
+        $this->cod_pais         = $comboxPais;
+        $this->persona_contacto = $personaContacto;
+        $this->cod_forma_pago   = $comboxPago;
+        $this->exento_impuesto  = $statusImpuesto;
+        //$this->date_registro;
+        $this->activo           = $lStatus;
+
 
         #Sentencia
-        $sql = "SELECT * FROM cat_bancos WHERE nombre_banco = '{$this->nombre_banco}' ";
+        //$sql = "SELECT * FROM cat_contacto WHERE es_correo = '{$this->es_correo}' ";
 
         #Mando a llamar la función(select_all)
-        $request = $this->select_all($sql);
+        //$request = $this->select_all($sql);        
 
         /*var_dump($request);
           exit();*/
 
-        if (empty($request)) {
+        /*if (empty($request)) {*/
 
-            $sql = "INSERT INTO cat_bancos(nombre_banco, nota_banco, es_local, date_registro, activo) VALUE (?,?,?,?,?)";
+        $sql = "INSERT INTO bill_clientes(nombre_cliente, numero_ruc, cod_pais, persona_contacto, cod_forma_pago, exento_impuesto, 	activo) 
+                VALUE (?,?,?,?,?,?,?)";
 
-            #arrData: array de información
-            $arrData = array($this->nombre_banco, $this->nota_banco, $this->es_local, $this->date_registro, $this->activo);
+        #arrData: array de información
+        $arrData = array($this->nombre_cliente, $this->numero_ruc, $this->cod_pais, $this->persona_contacto, $this->cod_forma_pago, $this->exento_impuesto, $this->activo);
 
-            #Envio a la funcion insert(sentencia y data)
-            $requestInsert = $this->insert($sql, $arrData);
+        #Envio a la funcion insert(sentencia y data)
+        $requestInsert = $this->insert($sql, $arrData);
 
-            return $requestInsert;
-        } else {
+        return $requestInsert;
+        /* } else {
             $return = "existe";
-        }
+        }*/
         return $return;
     }
 

@@ -1,5 +1,5 @@
 <?php
- ### CLASE: MonedaModel ###
+### CLASE: MonedaModel ###
 class MonedaModel extends Mysql
 {
     private $cod_moneda;
@@ -13,6 +13,16 @@ class MonedaModel extends Mysql
     {
         parent::__construct();
     }
+
+    ### COMBOX: MOSTRAR TODOS LAS LAS MONEDAS ###
+    public function comboxMoneda()
+    {
+        $sql = "SELECT cod_moneda, nombre_moneda FROM cat_moneda";
+
+        $request = $this->select_all($sql);
+        return $request;
+    }
+
 
     ### MODELO: MOSTRAR TODAS LAS MONEDAS ###
     public function selectMoneda()
@@ -36,9 +46,9 @@ class MonedaModel extends Mysql
 
         #Sentencia
         $sql = "SELECT * FROM cat_moneda WHERE nombre_moneda = '{$this->nombre_moneda}' ";
-        
+
         #Mando a llamar la función(select_all)
-        $request = $this->select_all($sql);        
+        $request = $this->select_all($sql);
 
         /*var_dump($request);
           exit();*/
@@ -80,11 +90,12 @@ class MonedaModel extends Mysql
         }
         return $request;
     }
- 
+
 
     ### MODELO: EDITAR MONEDA ###
-    public function editMoneda(int $idMoneda){
-        
+    public function editMoneda(int $idMoneda)
+    {
+
         //Buscar Moneda
         $this->cod_moneda = $idMoneda;
         $sql = "SELECT * FROM cat_moneda WHERE cod_moneda = {$this->cod_moneda}";
@@ -92,9 +103,10 @@ class MonedaModel extends Mysql
         return $request;
     }
 
-   
+
     ### MODELO: ACTUALIZAR MONEDA ###
-    public function updateMoneda(int $intIdMoneda, string $nombre, $listLocal, int $status){
+    public function updateMoneda(int $intIdMoneda, string $nombre, $listLocal, int $status)
+    {
 
         #Recojo Data
         $this->cod_moneda    = $intIdMoneda;
@@ -107,15 +119,13 @@ class MonedaModel extends Mysql
         $sql = "SELECT * FROM cat_moneda WHERE nombre_moneda = '$this->nombre_moneda' AND cod_moneda != $this->cod_moneda";
         $request = $this->select_all($sql);
 
-        if(empty($request))
-        {
+        if (empty($request)) {
             $sql = "UPDATE cat_moneda SET nombre_moneda = ?, es_local = ?, date_registro = ?, activo = ? WHERE cod_moneda = $this->cod_moneda";
             $arrData = array($this->nombre_moneda, $this->es_local, $this->date_registro, $this->activo);
-            $request = $this->update($sql,$arrData);
-        }else{
+            $request = $this->update($sql, $arrData);
+        } else {
             $request = "exist";
         }
-        return $request;			
+        return $request;
     }
-   
 }

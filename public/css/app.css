@@ -535,24 +535,7 @@ File: Main Css File
   display: none;
 }
 
-.page-title-box {
-  padding: 10px 1.5rem;
-  background-color: var(--vz-card-bg);
-  -webkit-box-shadow: 0 1px 2px rgba(56, 65, 74, 0.15);
-          box-shadow: 0 1px 2px rgba(56, 65, 74, 0.15);
-  border-bottom: 1px solid none;
-  border-top: 1px solid none;
-  margin: -23px -1.5rem 1.5rem -1.5rem;
-}
-.page-title-box .breadcrumb {
-  background-color: transparent;
-  padding: 0;
-}
-.page-title-box h4 {
-  font-weight: 700;
-  font-size: 15px !important;
-  text-transform: uppercase;
-}
+
 
 [data-layout=horizontal] .page-title-box {
   padding: 1.2rem 0;
