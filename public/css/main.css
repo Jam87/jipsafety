@@ -356,3 +356,22 @@ div class="menu">
 .notBlock{
 	display: none;
 }
+
+.card i{
+	font-size: 17pt;
+	color: #333;
+	cursor: pointer;
+	position: absolute;
+	top: 0px;
+	right: 22px;
+}
+
+.myTable tbody tr
+{
+	cursor: pointer;
+}
+
+.myTable tbody tr:hover
+{
+	background-color: rgba(35,149,255,0.21);
+}
