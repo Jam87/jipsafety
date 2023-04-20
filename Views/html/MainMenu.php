@@ -35,8 +35,8 @@
           <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
             <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Inicio</span>
           </a>
-         
-         <!-- CLIENTES --> 
+
+          <!-- CLIENTES -->
         <li class="nav-item"><!-- Modulo: Clientes -->
           <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarApps">
             <i class="ri-apps-2-line"></i> <span data-key="t-apps">Clientes</span>
@@ -62,7 +62,7 @@
                 <a href="<?= base_url(); ?>proveedores" class="nav-link" data-key="t-remix">Proveedores</a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>Compras" class="nav-link" data-key="t-boxicons">Compras</a>
+
               </li>
 
         </li>
@@ -72,13 +72,13 @@
 
 
     <!-- INVENTARIOS -->
-     <li class="nav-item">
+    <li class="nav-item">
       <a class="nav-link menu-link" href="#sidebarCharts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCharts">
         <i class="ri-pie-chart-line"></i> <span data-key="t-charts">Inventario</span>
       </a>
       <div class="collapse menu-dropdown" id="sidebarCharts">
         <ul class="nav nav-sm flex-column">
-          <li class="nav-item">        
+          <li class="nav-item">
           </li>
           <li class="nav-item">
             <a href="<?= base_url(); ?>kardex" class="nav-link" data-key="t-chartjs"> Kardex </a>
