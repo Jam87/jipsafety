@@ -44,305 +44,6 @@
                     </div>
                     <!-- end page title -->
 
-                   <!--- ESTA CORRECTO -->
-                   <div class="row justify-content-center">
-                        <div class="col-xxl-9">
-                            <div class="card">
-                                <form class="needs-validation" novalidate id="invoice_form">
-                                    <div class="card-body border-bottom border-bottom-dashed p-4">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="profile-user mx-auto  mb-3">
-                                                    <input id="profile-img-file-input" type="file" class="profile-img-file-input" />
-                                                    <label for="profile-img-file-input" class="d-block" tabindex="0">
-                                                        <span class="overflow-hidden border border-dashed d-flex align-items-center justify-content-center rounded" style="height: 60px; width: 256px;">
-                                                            <img src="assets/images/logo-dark.png" class="card-logo card-logo-dark user-profile-image img-fluid" alt="logo dark">
-                                                            <img src="assets/images/logo-light.png" class="card-logo card-logo-light user-profile-image img-fluid" alt="logo light">
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <label for="companyAddress">Address</label>
-                                                    </div>
-                                                    <div class="mb-2">
-                                                        <textarea class="form-control bg-light border-0" id="companyAddress" rows="3" placeholder="Company Address" required></textarea>
-                                                        <div class="invalid-feedback">
-                                                            Please enter a address
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <input type="text" class="form-control bg-light border-0" id="companyaddpostalcode" minlength="5" maxlength="6" placeholder="Enter Postal Code" required />
-                                                        <div class="invalid-feedback">
-                                                            The US zip code must contain 5 digits, Ex. 45678
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end col-->
-                                            <div class="col-lg-4 ms-auto">
-                                                <div class="mb-2">
-                                                    <input type="text" class="form-control bg-light border-0" id="registrationNumber" maxlength="12" placeholder="Legal Registration No" required />
-                                                    <div class="invalid-feedback">
-                                                        Please enter a registration no, Ex., 012345678912
-                                                    </div>
-                                                </div>
-                                                <div class="mb-2">
-                                                    <input type="email" class="form-control bg-light border-0" id="companyEmail" placeholder="Email Address" required />
-                                                    <div class="invalid-feedback">
-                                                        Please enter a valid email, Ex., example@gamil.com
-                                                    </div>
-                                                </div>
-                                                <div class="mb-2">
-                                                    <input type="text" class="form-control bg-light border-0" id="companyWebsite" placeholder="Website" required />
-                                                    <div class="invalid-feedback">
-                                                        Please enter a website, Ex., www.example.com
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <input type="text" class="form-control bg-light border-0" data-plugin="cleave-phone" id="compnayContactno" placeholder="Contact No" required />
-                                                    <div class="invalid-feedback">
-                                                        Please enter a contact number
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--end row-->
-                                    </div>
-                                    <div class="card-body p-4">
-                                        <div class="row g-3">
-                                            <div class="col-lg-3 col-sm-6">
-                                                <label for="invoicenoInput">Invoice No</label>
-                                                <input type="text" class="form-control bg-light border-0" id="invoicenoInput" placeholder="Invoice No" value="#VL25000355" readonly="readonly" />
-                                            </div>
-                                            <!--end col-->
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div>
-                                                    <label for="date-field">Date</label>
-                                                    <input type="text" class="form-control bg-light border-0" id="date-field" data-provider="flatpickr" data-time="true" placeholder="Select Date-time">
-                                                </div>
-                                            </div>
-                                            <!--end col-->
-                                            <div class="col-lg-3 col-sm-6">
-                                                <label for="choices-payment-status">Payment Status</label>
-                                                <div class="input-light">
-                                                    <select class="form-control bg-light border-0" data-choices data-choices-search-false id="choices-payment-status" required>
-                                                        <option value="">Select Payment Status</option>
-                                                        <option value="Paid">Paid</option>
-                                                        <option value="Unpaid">Unpaid</option>
-                                                        <option value="Refund">Refund</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <!--end col-->
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div>
-                                                    <label for="totalamountInput">Total Amount</label>
-                                                    <input type="text" class="form-control bg-light border-0" id="totalamountInput" placeholder="$0.00" readonly />
-                                                </div>
-                                            </div>
-                                            <!--end col-->
-                                        </div>
-                                        <!--end row-->
-                                    </div>
-                                    <div class="card-body p-4 border-top border-top-dashed">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-sm-6">
-                                                <div>
-                                                    <label for="billingName" class="text-muted text-uppercase fw-semibold">Billing Address</label>
-                                                </div>
-                                                <div class="mb-2">
-                                                    <input type="text" class="form-control bg-light border-0" id="billingName" placeholder="Full Name" required />
-                                                    <div class="invalid-feedback">
-                                                        Please enter a full name
-                                                    </div>
-                                                </div>
-                                                <div class="mb-2">
-                                                    <textarea class="form-control bg-light border-0" id="billingAddress" rows="3" placeholder="Address" required></textarea>
-                                                    <div class="invalid-feedback">
-                                                        Please enter a address
-                                                    </div>
-                                                </div>
-                                                <div class="mb-2">
-                                                    <input type="text" class="form-control bg-light border-0" data-plugin="cleave-phone" id="billingPhoneno" placeholder="(123)456-7890" required />
-                                                    <div class="invalid-feedback">
-                                                        Please enter a phone number
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <input type="text" class="form-control bg-light border-0" id="billingTaxno" placeholder="Tax Number" required />
-                                                    <div class="invalid-feedback">
-                                                        Please enter a tax number
-                                                    </div>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input" id="same" name="same" onchange="billingFunction()" />
-                                                    <label class="form-check-label" for="same">
-                                                        Will your Billing and Shipping address same?
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <!--end col-->
-                                            <div class="col-sm-6 ms-auto">
-                                                <div class="row">
-                                                    <div class="col-lg-8">
-                                                        <div>
-                                                            <label for="shippingName" class="text-muted text-uppercase fw-semibold">Shipping Address</label>
-                                                        </div>
-                                                        <div class="mb-2">
-                                                            <input type="text" class="form-control bg-light border-0" id="shippingName" placeholder="Full Name" required />
-                                                            <div class="invalid-feedback">
-                                                                Please enter a full name
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-2">
-                                                            <textarea class="form-control bg-light border-0" id="shippingAddress" rows="3" placeholder="Address" required></textarea>
-                                                            <div class="invalid-feedback">
-                                                                Please enter a address
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-2">
-                                                            <input type="text" class="form-control bg-light border-0" data-plugin="cleave-phone" id="shippingPhoneno" placeholder="(123)456-7890" required />
-                                                            <div class="invalid-feedback">
-                                                                Please enter a phone number
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <input type="text" class="form-control bg-light border-0" id="shippingTaxno" placeholder="Tax Number" required />
-                                                            <div class="invalid-feedback">
-                                                                Please enter a tax number
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end col-->
-                                        </div>
-                                        <!--end row-->
-                                    </div>
-                                    <div class="card-body p-4">
-                                        <div class="table-responsive">
-                                            <table class="invoice-table table table-borderless table-nowrap mb-0">
-                                                <thead class="align-middle">
-                                                    <tr class="table-active">
-                                                        <th scope="col" style="width: 50px;">#</th>
-                                                        <th scope="col">
-                                                            Product Details
-                                                        </th>
-                                                        <th scope="col" style="width: 120px;">
-                                                            <div class="d-flex currency-select input-light align-items-center">
-                                                                Rate
-                                                                <select class="form-selectborder-0 bg-light" data-choices data-choices-search-false id="choices-payment-currency" onchange="otherPayment()">
-                                                                    <option value="$">($)</option>
-                                                                    <option value="£">(£)</option>
-                                                                    <option value="₹">(₹)</option>
-                                                                    <option value="€">(€)</option>
-                                                                </select>
-                                                            </div>
-                                                        </th>
-                                                        <th scope="col" style="width: 120px;">Quantity</th>
-                                                        <th scope="col" class="text-end" style="width: 150px;">Amount</th>
-                                                        <th scope="col" class="text-end" style="width: 105px;"></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="newlink">
-                                                    <tr id="1" class="product">
-                                                        <th scope="row" class="product-id">1</th>
-                                                        <td class="text-start">
-                                                            <div class="mb-2">
-                                                                <input type="text" class="form-control bg-light border-0" id="productName-1" placeholder="Product Name" required />
-                                                                <div class="invalid-feedback">
-                                                                    Please enter a product name
-                                                                </div>
-                                                            </div>
-                                                            <textarea class="form-control bg-light border-0" id="productDetails-1" rows="2" placeholder="Product Details"></textarea>
-                                                        </td>
-                                                        <td>
-                                                            <input type="number" class="form-control product-price bg-light border-0" id="productRate-1" step="0.01" placeholder="0.00" required />
-                                                            <div class="invalid-feedback">
-                                                                Please enter a rate
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="input-step">
-                                                                <button type="button" class='minus'>–</button>
-                                                                <input type="number" class="product-quantity" id="product-qty-1" value="0" readonly>
-                                                                <button type="button" class='plus'>+</button>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-end">
-                                                            <div>
-                                                                <input type="text" class="form-control bg-light border-0 product-line-price" id="productPrice-1" placeholder="$0.00" readonly />
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-removal">
-                                                            <a href="javascript:void(0)" class="btn btn-success">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                <tbody>
-                                                    <tr id="newForm" style="display: none;"><td class="d-none" colspan="5"><p>Add New Form</p></td></tr>
-                                                    <tr>
-                                                        <td colspan="5">
-                                                            <a href="javascript:new_link()" id="add-item" class="btn btn-soft-secondary fw-medium"><i class="ri-add-fill me-1 align-bottom"></i> Add Item</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="border-top border-top-dashed mt-2">
-                                                        <td colspan="3"></td>
-                                                        <td colspan="2" class="p-0">
-                                                            <table class="table table-borderless table-sm table-nowrap align-middle mb-0">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">Sub Total</th>
-                                                                        <td style="width:150px;">
-                                                                            <input type="text" class="form-control bg-light border-0" id="cart-subtotal" placeholder="$0.00" readonly />
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">Estimated Tax (12.5%)</th>
-                                                                        <td>
-                                                                            <input type="text" class="form-control bg-light border-0" id="cart-tax" placeholder="$0.00" readonly />
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">Discount <small class="text-muted">(VELZON15)</small></th>
-                                                                        <td>
-                                                                            <input type="text" class="form-control bg-light border-0" id="cart-discount" placeholder="$0.00" readonly />
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">Shipping Charge</th>
-                                                                        <td>
-                                                                            <input type="text" class="form-control bg-light border-0" id="cart-shipping" placeholder="$0.00" readonly />
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr class="border-top border-top-dashed">
-                                                                        <th scope="row">Total Amount</th>
-                                                                        <td>
-                                                                            <input type="text" class="form-control bg-light border-0" id="cart-total" placeholder="$0.00" readonly />
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <!--end table-->
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <!--end table-->
-                                        </div>
-                                        
-                                        <!--end row-->
-                                        
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!--end col-->
-                    </div>
-                    
-                    
-
                     <div class="row justify-content-center">
                         <div class="col-xxl-9">
                             <div class="card" id="frmCompras">
@@ -426,56 +127,44 @@
                                                     <tr class="table-active">
                                                         <th scope="col" style="width: 50px;">#</th>
                                                         <th scope="col">
-                                                            Product Details
+                                                            Producto
                                                         </th>
                                                         <th scope="col" style="width: 120px;">
                                                             <div class="d-flex currency-select input-light align-items-center">
-                                                                Rate
+                                                                Precio
                                                                 <select class="form-selectborder-0 bg-light" data-choices data-choices-search-false id="choices-payment-currency" onchange="otherPayment()">
-                                                                    <option value="$">($)</option>
-                                                                    <option value="£">(£)</option>
-                                                                    <option value="₹">(₹)</option>
-                                                                    <option value="€">(€)</option>
+                                                                    <option value="4">($)</option>
+                                                                    <option value="1">(C$)</option>
                                                                 </select>
                                                             </div>
                                                         </th>
-                                                        <th scope="col" style="width: 120px;">Quantity</th>
-                                                        <th scope="col" class="text-end" style="width: 150px;">Amount</th>
+                                                        <th scope="col" style="width: 120px;">Cantidad</th>
+                                                        <th scope="col" class="text-end" style="width: 150px;">Total</th>
                                                         <th scope="col" class="text-end" style="width: 105px;"></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="newlink">
                                                     <tr id="1" class="product">
-                                                        <th scope="row" class="product-id">1</th>
+                                                        <th scope="row">1</th>
                                                         <td class="text-start">
                                                             <div class="mb-2">
-                                                                <input type="text" class="form-control bg-light border-0" id="productName-1" placeholder="Product Name" required />
-                                                                <div class="invalid-feedback">
-                                                                    Please enter a product name
-                                                                </div>
+                                                                <input type="text" class="form-control bg-light border-0 show_productos" placeholder="Seleccionar Producto" readonly />
                                                             </div>
-                                                            <textarea class="form-control bg-light border-0" id="productDetails-1" rows="2" placeholder="Product Details"></textarea>
+                                                            <input class="rcodigo" value="" type="hidden"/>
                                                         </td>
-                                                        <td>
-                                                            <input type="number" class="form-control product-price bg-light border-0" id="productRate-1" step="0.01" placeholder="0.00" required />
-                                                            <div class="invalid-feedback">
-                                                                Please enter a rate
-                                                            </div>
+                                                        <td class="precio">
+                                                            <input type="number" class="form-control product-price bg-light border-0 rprecio" step="0.5" min="0" placeholder="0.00" onblur="formatNumber(this, 2); control_fill(this);" onkeypress="formatNumber(this, 2)" onfocus="control_clear(this)" />
                                                         </td>
-                                                        <td>
-                                                            <div class="input-step">
-                                                                <button type="button" class='minus'>–</button>
-                                                                <input type="number" class="product-quantity" id="product-qty-1" value="0" readonly>
-                                                                <button type="button" class='plus'>+</button>
-                                                            </div>
+                                                        <td class="cantidad">
+                                                            <input type="number" class="form-control product-price bg-light border-0 rcantidad" step="1" min="0" placeholder="0" onblur="formatNumber(this, 2); control_fill(this);" onkeypress="formatNumber(this, 2)" onfocus="control_clear(this)" />
                                                         </td>
                                                         <td class="text-end">
                                                             <div>
-                                                                <input type="text" class="form-control bg-light border-0 product-line-price" id="productPrice-1" placeholder="$0.00" readonly />
+                                                                <input type="text" class="form-control bg-light border-0 product-line-price rtotal" placeholder="$0.00" readonly />
                                                             </div>
                                                         </td>
                                                         <td class="product-removal">
-                                                            <a href="javascript:void(0)" class="btn btn-success">Delete</a>
+                                                            <a class="btn btn-success btn-borrar">Borrar</a>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -483,7 +172,7 @@
                                                     <tr id="newForm" style="display: none;"><td class="d-none" colspan="5"><p>Add New Form</p></td></tr>
                                                     <tr>
                                                         <td colspan="5">
-                                                            <a id="add-Producto" class="btn btn-soft-secondary fw-medium"><i class="ri-add-fill me-1 align-bottom"></i> Nuevo Producto</a>
+                                                            <a id="add-Producto" class="btn btn-soft-secondary fw-medium">Nuevo</a>
                                                         </td>
                                                     </tr>
                                                     <tr class="border-top border-top-dashed mt-2">
@@ -498,25 +187,13 @@
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th scope="row">Estimated Tax (15%)</th>
+                                                                        <th scope="row">Transporte</th>
                                                                         <td>
-                                                                            <input type="text" class="form-control bg-light border-0" id="cart-tax" placeholder="$0.00" readonly />
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">Discount <small class="text-muted">(VELZON15)</small></th>
-                                                                        <td>
-                                                                            <input type="text" class="form-control bg-light border-0" id="cart-discount" placeholder="$0.00" readonly />
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">Shipping Charge</th>
-                                                                        <td>
-                                                                            <input type="text" class="form-control bg-light border-0" id="cart-shipping" placeholder="$0.00" readonly />
+                                                                            <input type="text" class="form-control bg-light border-0" id="cart-shipping" placeholder="$0.00" value="0.00" onblur="formatNumber(this, 2); control_fill(this);" onkeypress="formatNumber(this, 2)" onfocus="control_clear(this)" />
                                                                         </td>
                                                                     </tr>
                                                                     <tr class="border-top border-top-dashed">
-                                                                        <th scope="row">Total Amount</th>
+                                                                        <th scope="row">Total</th>
                                                                         <td>
                                                                             <input type="text" class="form-control bg-light border-0" id="cart-total" placeholder="$0.00" readonly />
                                                                         </td>
@@ -531,49 +208,17 @@
                                             <!--end table-->
                                         </div>
 										
-                                        <div class="row mt-3">
-                                            <div class="col-lg-4">
-                                                <div class="mb-2">
-                                                    <label for="choices-payment-type" class="form-label text-muted text-uppercase fw-semibold">Payment Details</label>
-                                                    <div class="input-light">
-                                                        <select class="form-control bg-light border-0" data-choices data-choices-search-false data-choices-removeItem id="choices-payment-type">
-                                                            <option value="">Payment Method</option>
-                                                            <option value="Mastercard">Mastercard</option>
-                                                            <option value="Credit Card">Credit Card</option>
-                                                            <option value="Visa">Visa</option>
-                                                            <option value="Paypal">Paypal</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-2">
-                                                    <input class="form-control bg-light border-0" type="text" id="cardholderName" placeholder="Card Holder Name">
-                                                </div>
-                                                <div class="mb-2">
-                                                    <input class="form-control bg-light border-0" type="text" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx">
-                                                </div>
-                                                <div>
-                                                    <input class="form-control  bg-light border-0" type="text" id="amountTotalPay" placeholder="$0.00" readonly />
-                                                </div>
-                                            </div>
-                                            <!--end col-->
-                                        </div>
-                                        <!--end row-->
-										
-                                        <div class="mt-4">
-                                            <label for="exampleFormControlTextarea1" class="form-label text-muted text-uppercase fw-semibold">NOTES</label>
-                                            <textarea class="form-control alert alert-info" id="exampleFormControlTextarea1" placeholder="Notes" rows="2" required>All accounts are to be paid within 7 days from receipt of invoice. To be paid by cheque or credit card or direct payment online. If account is not paid within 7 days the credits details supplied as confirmation of work undertaken will be charged the agreed quoted fee noted above.</textarea>
-                                        </div>
-										
                                         <div class="hstack gap-2 justify-content-end d-print-none mt-4">
-                                            <button type="submit" class="btn btn-success"><i class="ri-printer-line align-bottom me-1"></i> Save</button>
-                                            <a href="javascript:void(0);" class="btn btn-primary"><i class="ri-download-2-line align-bottom me-1"></i> Download Invoice</a>
-                                            <a href="javascript:void(0);" class="btn btn-danger"><i class="ri-send-plane-fill align-bottom me-1"></i> Send Invoice</a>
+                                            <button type="button" class="btn btn-success"><i class="ri-printer-line align-bottom me-1" onClick="Guardar();"></i> Guardar</button>
+                                            <a href="javascript:void(0);" class="btn btn-primary"><i class="ri-download-2-line align-bottom me-1"></i> Imprimir</a>
                                         </div>
                                     </div>
                                 </form>
                             </div>
 							
 							<?php include_once("proveedores.php"); ?>
+							
+							<?php include_once("productos.php"); ?>
                         </div>
                         <!--end col-->
                     </div>
@@ -584,6 +229,9 @@
             </div>
             <!-- End Page-content -->
 			
+			
+			
+
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
@@ -592,7 +240,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                Dise�ado & Desarrollado por J.I.P
+                                Dise�ado & Desarrollado por J.I.P
                             </div>
                         </div>
                     </div>
@@ -609,12 +257,23 @@
         <i class="ri-arrow-up-line"></i>
     </button>
     <!--end back-to-top-->
-
+	
+	<input id="current_row" name="current_row" type="hidden" value="" />
+	
     <!-- JAVASCRIPT -->
     <?php MainJs($data); ?>
 	
-   <!-- <script>
-        $(document).ready(function () {
+    <script>
+        $(document).ready(function () {	
+			/* MOSTRAR PROVEEDORES */
+            $("#txtProveedor").click(function () {
+                show_popup();
+            });
+			
+            $(".close").click(function () {
+                close_popup();
+            });
+			
             $("#txtpbuscar").keyup(function () {
                 _this = this;
                 // Show only matching TR, hide rest of them
@@ -626,18 +285,61 @@
                 });
             });
 			
-            $("#txtProveedor").click(function () {
-                show_popup();
+			/* MOSTRAR PRODUCTOS */
+            $(".show_productos").click(function () {
+                var id = $(this).parent("div").parent("td").parent("tr").attr('id');
+				$("#current_row").val(id);
+				
+                show_popup_productos();
             });
 			
-            $(".close").click(function () {
-                close_popup();
+            $(".close_producto").click(function () {
+                close_popup_productos();
+            });
+			
+            $("#txtBuscarProducto").keyup(function () {
+                _this = this;
+                // Show only matching TR, hide rest of them
+                $.each($("#productosTable tbody tr"), function () {
+                    if ($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+                        $(this).hide();
+                    else
+                        $(this).show();
+                });
+            });
+			
+			/* CALCULOS */
+            $(".rprecio").keyup(function (e) {
+                calcular_detalle(this);
+            });
+			
+            $(".rcantidad").keyup(function (e) {
+                calcular_detalle(this);
+            });
+			
+            $("#cart-shipping").keyup(function (e) {
+                Totales();
             });
 			
 			productos();
 			
 			Load_Proveedores();
+			
+			Load_Productos()
         });
+		
+		/* MOSTRAR PROVEEDORES */
+        function show_popup() 
+		{
+            $("#frmProveedor").show(300);
+            $("#frmCompras").hide(300);
+        }
+
+        function close_popup() 
+		{
+            $("#frmProveedor").hide(300);
+            $("#frmCompras").show(300);
+        }
 		
         function Load_Proveedores()
         {
@@ -663,7 +365,7 @@
                     }
                     else
                     {
-                        alert("Ocurri� un error inesperado.");
+                        alert("Ocurri� un error inesperado.");
                     }
 
                 },
@@ -678,23 +380,11 @@
             /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
         }
 		
-        function show_popup() 
-		{
-            $("#frmProveedor").show(300);
-            $("#frmCompras").hide(300);
-        }
-
-        function close_popup() 
-		{
-            $("#frmProveedor").hide(300);
-            $("#frmCompras").show(300);
-        }
-		
 		function selectProveedor(row)
 		{
 			var codigo = $(row).find("td").eq(0).html();
 			var nombre = $(row).find("td").eq(1).html();
-			var pais = $(row).find("td").eq(4).html();
+			var pais = $(row).find("td").eq(3).html();
 			var FormaPago = $(row).find("td").eq(4).html();
 			
 			$("#hdProveedor").val(codigo);
@@ -705,6 +395,59 @@
 			close_popup();
 		}
 		
+		/* MOSTRAR PRODUCTOS */
+        function show_popup_productos() 
+		{
+            $("#frmProductor").show(300);
+            $("#frmCompras").hide(300);
+        }
+
+        function close_popup_productos() 
+		{
+            $("#frmProductor").hide(300);
+            $("#frmCompras").show(300);
+        }
+		
+        function Load_Productos()
+        {
+            /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+            var formData = new FormData();
+            formData.append('type', "view_productos_compras");
+
+            $.ajax({
+                url: "https://jip.grupopaniagua.com/Config/services.php",
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                //beforeSend: function (){alert("Iniciando");},
+				
+                success: function(datos)
+                {	
+                    var obj = JSON.parse(datos);
+
+                    if (obj.state == "success")
+                    {
+                        $("#tblProductos").html(obj.estructura);
+                    }
+                    else
+                    {
+                        alert("Ocurri� un error inesperado.");
+                    }
+
+                },
+
+                error: function (datos)
+                {
+                    alert('Se produjo un error: ' + datos.responseText);
+                }
+
+                //,complete : function(xhr, status){alert("Terinado");}
+            });
+            /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+        }
+		
+		/* TABLA DE PRODUCTOS */
         function productos()
 		{ 
            var tbody = $('#productos #newlink'); 
@@ -715,8 +458,206 @@
               var fila_nueva = $('<tr></tr>');
               fila_nueva.append(fila_contenido); 
               tbody.append(fila_nueva); 
+			   
+              $(".show_productos").click(function () {
+				  var id = $(this).parent("div").parent("td").parent("tr").attr('id');
+				  $("#current_row").val(id);
+				  
+                  show_popup_productos();
+				  
+				  this.off('click');
+              });
+			   
+              $(".rprecio").keyup(function (e) {
+                  calcular_detalle(this);
+				  
+				  this.off('click');
+              });
+
+              $(".rcantidad").keyup(function (e) {
+                  calcular_detalle(this);
+				  
+				  this.off('click');
+              });
+			   
+              $('.btn-borrar').click(function(){ 
+                 $(this).parent("td").parent("tr").remove();
+				  
+				  consecutivos();
+              });
+			   
+			  consecutivos();
            });
         }
+		
+		function selectProducto(row)
+		{
+			var codigo = $(row).find("td").eq(0).html();
+			var nombre = $(row).find("td").eq(2).html();
+			
+			var rowId = $("#current_row").val();
+			$("#" + rowId + " td.text-start input[type=hidden]").val(codigo);
+			$("#" + rowId + " td.text-start input[type=text]").val(nombre);
+			
+			close_popup_productos();
+		}
+		
+		function consecutivos()
+		{
+			var consecutivo = 1;
+			
+			$("#productos #newlink tr").each(function (index) {
+				
+				$(this).children("th").each(function (index2) {
+					
+					if (index2 == 0)
+					{
+						$(this).parent("tr").attr("id",consecutivo);
+						$(this).html(consecutivo);
+						consecutivo += 1;
+					}
+					
+				})
+				
+			})
+		}
+		
+		/* CALCULO DE PRODUCTOS */
+		function calcular_detalle(objeto)
+		{
+          var row =  $(objeto).parent("td").parent("tr").attr('id');
+
+          var precio = $("#" + row + " .rprecio").val();
+          precio = precio.replace(",", "");
+
+          var cantidad = $("#" + row + " .rcantidad").val();
+          cantidad = cantidad.replace(",", "");
+
+          var total = parseFloat(precio) * parseFloat(cantidad);
+
+          $("#" + row + " .rtotal").val(total);
+			
+		  Totales();
+		}
+		
+		function Totales() {
+
+			var resultVal = 0.0; 
+
+			$("#productos #newlink tr").each(function(){
+              var celdaValor = $(this).find('.rtotal');
+
+              if (parseFloat(celdaValor.val()) > 0)
+              {
+                  resultVal += parseFloat(celdaValor.val());
+              }
+
+			}) //each
+			
+			resultVal = parseFloat(resultVal, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+			
+			$("#cart-subtotal").val(resultVal);
+			
+			var envio = $("#cart-shipping").val();
+			envio = envio.replace(",", "");
+			
+			var Total = 0;
+			
+			resultVal = resultVal.replace(",", "");
+			
+			var Total = parseFloat(resultVal) + parseFloat(envio);
+			
+			$("#cart-total").val(Total);
+		}
+		
+		/* GUARDAR REGISTROS */
+		function Guardar()
+		{
+			if ($("#txtDocumento").val() == "")
+			{
+				alert("<p>El proceso no puede continuar. <br/> El numero de documento es requerido. <br/><br/></p>");
+				return false;
+			}
+			
+			if ($("#date-field").val() == "")
+			{
+				alert("<p>El proceso no puede continuar. <br/> La fecha es requerida. <br/><br/></p>");
+				return false;
+			}
+			
+			if ($("#hdProveedor").val() == "")
+			{
+				alert("<p>El proceso no puede continuar. <br/> El proveedor es requerido. <br/><br/></p>");
+				return false;
+			}
+			
+			if ( !parseFloat($("#cart-total").val()) > 0)
+			{
+				alert("<p>El proceso no puede continuar. <br/> El monto de la compa debe ser mayor a cero. <br/><br/></p>");
+				return false;
+			}
+			
+			// GENERAR DETALLE			
+			var array = [];
+			var headers = [];
+			headers[0] = "codigo";
+			headers[1] = "precio";
+			headers[2] = "cantidad";
+			
+			$("#productos #newlink tr").each(function(){
+				var arrayItem = {};
+				
+              	var celCodigo = $(this).find('.rcodigo').val();
+			  	var celPrecio = $(this).find('.rprecio').val();
+				var celCantidad = $(this).find('.rcantidad').val();
+				
+				arrayItem[headers[0]] = celCodigo;
+				arrayItem[headers[1]] = celPrecio;
+				arrayItem[headers[2]] = celCantidad;
+				
+				array.push(arrayItem);
+			}) //each
+			
+			//console.log(array);
+			
+			var formData = new FormData();
+			formData.append('type', "compra_new");
+			formData.append('proveedor', $("#hdProveedor").val());
+			formData.append('documento', $("#txtDocumento").val());
+			formData.append('Fecha', $("#date-field").val());
+			formData.append('Moneda', $("#choices-payment-currency").val());
+			formData.append('total', $("#cart-total").val());
+			formData.append("detalle", JSON.stringify(array));
+			
+			$.ajax({
+				url: "https://jip.grupopaniagua.com/Config/services.php",
+				type: "POST",
+				data: formData,
+				contentType: false,
+				processData: false,
+				success: function(datos)
+				{
+                    var obj = JSON.parse(datos);
+
+                    if (obj.state == "success")
+                    {
+                        alert("El proceso a finalizado de forma correcta.");
+						//location.reload();
+                    }
+                    else
+                    {
+                        alert(obj.mensaje);
+                    }
+
+				},
+
+                error: function (datos)
+                {
+                    alert('Se produjo un error: ' + datos.mensaje);
+                }
+			});
+		}
+		
     </script>
 </body>
 
