@@ -52,7 +52,7 @@
         </li><!-- /Modulo: Clientes -->
 
         <!-- COMPRAS -->
-        <li class="nav-item">
+        <!--<li class="nav-item">
           <a class="nav-link menu-link" href="#sidebarIcons" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarIcons">
             <i class="ri-compasses-2-line"></i> <span data-key="t-icons">Compras</span>
           </a>
@@ -62,10 +62,10 @@
                 <a href="<?= base_url(); ?>proveedores" class="nav-link" data-key="t-remix">Proveedores</a>
               </li>
               <li class="nav-item">
-
+                <a href="<?= base_url(); ?>Compras" class="nav-link" data-key="t-boxicons">Compras</a>
               </li>
 
-        </li>
+        </li>-->
       </ul>
     </div>
     </li>
