@@ -22,9 +22,9 @@ class Compras extends Controllers
         #$data['page_functions_js'] = "functions_bancos.js";
 
         #Cargo la vista(tipos). La vista esta en View - Tipos
-        $this->views->getView($this, "compras", $data);
+        $this->views->getView($this, "compra", $data);
     }
-	
+
     function obtenerProveedores()
     {
 
